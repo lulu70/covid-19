@@ -2,24 +2,28 @@ import React from "react"
 import Layout from "../components/layout"
 import useFetch from "../hooks/useFeatch"
 import SEO from "../components/seo"
+import useFetchCountries from "../hooks/useFetchCountries"
 
 const Country = ({ country }) => {
-  const { data, loading, error } = useFetch(
-    `https://covid19.mathdro.id/api/countries/${country}`
-  )
-  if (error) return <span />
-  if (loading) return <h1>Loading...</h1>
   return (
-    <>
-      <h3>{country} :</h3>
+    <div className="container">
+      <h2>{country.name} :</h2>
       <ul>
-        <li>LastUpdate: {new Date(data.lastUpdate).toDateString()}</li>
-        <li>Confirmed: {data.confirmed.value}</li>
-        <li>Recovered: {data.recovered.value}</li>
-        <li>Deaths: {data.deaths.value}</li>
+        <li>LastUpdate: {new Date(country.lastUpdate).toDateString()}</li>
+        <li>Confirmed: {country.confirmed.value}</li>
+        <li>Recovered: {country.recovered.value}</li>
+        <li>Deaths: {country.deaths.value}</li>
       </ul>
-    </>
+    </div>
   )
+}
+const Countries = ({ countries }) => {
+  const { loading, data } = useFetchCountries(countries)
+  if (loading) return <h1>Loading...</h1>
+  if (!loading)
+    return data
+      .sort((a, b) => b.confirmed.value - a.confirmed.value)
+      .map((country, i) => <Country key={i} country={country} />)
 }
 
 const IndexPage = () => {
@@ -30,12 +34,9 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       {loading && <h1>Loading...</h1>}
-      {error && <h1>{error.message}</h1>}
-      {!loading &&
-        !error &&
-        Object.keys(data.countries).map(country => (
-          <Country key={country} country={country} />
-        ))}
+      {!loading && !error && (
+        <Countries countries={Object.keys(data.countries)} />
+      )}
     </Layout>
   )
 }
