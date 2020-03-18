@@ -1,21 +1,43 @@
 import React from "react"
-import { Link } from "gatsby"
-
 import Layout from "../components/layout"
-import Image from "../components/image"
+import useFetch from "../hooks/useFeatch"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const Country = ({ country }) => {
+  const { data, loading, error } = useFetch(
+    `https://covid19.mathdro.id/api/countries/${country}`
+  )
+  if (error) return <span />
+  if (loading) return <h1>Loading...</h1>
+  return (
+    <>
+      <h3>{country} :</h3>
+      <ul>
+        <li>LastUpdate: {new Date(data.lastUpdate).toDateString()}</li>
+        <li>Confirmed: {data.confirmed.value}</li>
+        <li>Recovered: {data.recovered.value}</li>
+        <li>Deaths: {data.deaths.value}</li>
+      </ul>
+    </>
+  )
+}
+
+const IndexPage = () => {
+  const { data, loading, error } = useFetch(
+    "https://covid19.mathdro.id/api/countries"
+  )
+  return (
+    <Layout>
+      <SEO title="Home" />
+      {loading && <h1>Loading...</h1>}
+      {error && <h1>{error.message}</h1>}
+      {!loading &&
+        !error &&
+        Object.keys(data.countries).map(country => (
+          <Country key={country} country={country} />
+        ))}
+    </Layout>
+  )
+}
 
 export default IndexPage
