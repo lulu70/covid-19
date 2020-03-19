@@ -36,13 +36,12 @@ const Controls = () => {
 }
 const IndexPage = () => {
   const { data, loading, error } = useFetch("https://covid19.mathdro.id/api")
-  const [color, setColor] = React.useState("green")
+  const [color, setColor] = React.useState("")
   React.useEffect(() => {
     if (!error && !loading) {
       const confirmed = data.confirmed.value
       const deaths = data.deaths.value
-      // const recovered = data.recovered.value
-      const recovered = 200000
+      const recovered = data.recovered.value
       const colorScale = scaleLinear([0, confirmed - deaths], ["red", "blue"])
       const recoveredColor = colorScale(recovered)
       setColor(recoveredColor)
