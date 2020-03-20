@@ -14,7 +14,7 @@ const IndexPage = () => {
       const color = calculateColor(data.all)
       setCurrentCountry({
         color,
-        country: "global",
+        country: "Global",
         ...data.all,
       })
     }
@@ -49,12 +49,13 @@ const IndexPage = () => {
           <select
             id="countries"
             onBlur={null}
+            value={currentCountry.country}
             onChange={e => {
               if (e.target.value === "global") {
                 const color = calculateColor(data.all)
                 setCurrentCountry({
                   color,
-                  country: "global",
+                  country: "Global",
                   ...data.all,
                 })
               } else {
@@ -69,7 +70,7 @@ const IndexPage = () => {
               }
             }}
           >
-            <option>global</option>
+            <option>Global</option>
             {data.countries.map(({ country }) => (
               <option key={country}>{country}</option>
             ))}
