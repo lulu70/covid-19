@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Corona`,
+    title: `Covid-19 (Corona) state`,
     description: `Corona (covid-19) virus 3d simulation `,
     author: `Lior cohen`,
   },

@@ -11,6 +11,8 @@ const Selector = ({
       backgroundColor: "black",
       color: "white",
       flex: 1,
+      padding: "1rem",
+      fontFamily: "none",
     }}
   >
     <li>{currentCountry.country}</li>
