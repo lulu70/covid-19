@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import { scaleLinear } from "d3-scale"
 import Loader from "react-loader"
 import EarthScene from "../components/EarthScene"
+import Selector from "../components/Selector"
 const IndexPage = () => {
   const { data, loading, error } = useFetchCountries()
   const [currentCountry, setCurrentCountry] = React.useState("")
@@ -39,42 +40,12 @@ const IndexPage = () => {
       {loading && <Loader color="white" />}
       {!loading && !error && (
         <>
-          <ul>
-            <li>{currentCountry.country}</li>
-            <li>Confirmed: {currentCountry.cases}</li>
-            <li>Recovered: {currentCountry.recovered}</li>
-            <li>Deaths: {currentCountry.deaths}</li>
-          </ul>
-          <label htmlFor="countries">Change Country :</label>
-          <select
-            id="countries"
-            onBlur={null}
-            value={currentCountry.country}
-            onChange={e => {
-              if (e.target.value === "global") {
-                const color = calculateColor(data.all)
-                setCurrentCountry({
-                  color,
-                  country: "Global",
-                  ...data.all,
-                })
-              } else {
-                const selectedCountry = data.countries.find(
-                  ({ country }) => country === e.target.value
-                )
-                const color = calculateColor(selectedCountry)
-                setCurrentCountry({
-                  color,
-                  ...selectedCountry,
-                })
-              }
-            }}
-          >
-            <option>Global</option>
-            {data.countries.map(({ country }) => (
-              <option key={country}>{country}</option>
-            ))}
-          </select>
+          <Selector
+            currentCountry={currentCountry}
+            calculateColor={calculateColor}
+            setCurrentCountry={setCurrentCountry}
+            data={data}
+          />
           <EarthScene color={currentCountry.color} />
         </>
       )}

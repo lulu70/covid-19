@@ -13,20 +13,10 @@ import PropTypes from "prop-types"
 import "./layout.css"
 
 const Layout = ({ children }) => {
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
-
   return (
     <>
-      {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
-      <main>{children}</main>
+      {/* <Header site.siteMetadata.title} /> */}
+      <main style={{ display: "flex" }}>{children}</main>
       {/* <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
