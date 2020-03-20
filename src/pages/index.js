@@ -6,14 +6,16 @@ import { scaleLinear } from "d3-scale"
 import Loader from "react-loader"
 import EarthScene from "../components/EarthScene"
 const IndexPage = () => {
-  const { data, loading, error } = useFetch("https://covid19.mathdro.id/api")
+  const { data, loading, error } = useFetch(
+    "https://coronavirus-19-api.herokuapp.com/all"
+  )
   const [color, setColor] = React.useState("")
 
   React.useEffect(() => {
     if (!error && !loading) {
-      const confirmed = data.confirmed.value
-      const deaths = data.deaths.value
-      const recovered = data.recovered.value
+      const confirmed = data.cases
+      const deaths = data.deaths
+      const recovered = data.recovered
       const colorScale = scaleLinear([0, confirmed - deaths], ["red", "blue"])
       const recoveredColor = colorScale(recovered)
       setColor(recoveredColor)
