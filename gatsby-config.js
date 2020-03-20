@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Covid-19 (Corona) state`,
+    title: `Covid-19 (corona) virus state of recovery`,
     description: `Corona (covid-19) virus 3d simulation `,
     author: `Lior cohen`,
   },
@@ -24,7 +24,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

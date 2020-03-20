@@ -1,5 +1,5 @@
 canvas {
-  background-color: rgb(41, 41, 41);
+  background-color: #212121;
 }
 html {
   /* font-family: sans-serif; */
@@ -623,5 +623,19 @@ pre tt:after {
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+  }
+  canvas {
+    height: 400px;
+  }
+}
+@media (min-width: 901px) {
+  .main_container {
+    height: 100vh;
   }
 }

@@ -15,13 +15,15 @@ const Selector = ({
       fontFamily: "none",
     }}
   >
-    <li>{currentCountry.country}</li>
+    <h3 style={{ fontWeight: "normal" }}>{currentCountry.country}</h3>
     <ul>
-      <li>Confirmed: {currentCountry.cases}</li>
-      <li>Recovered: {currentCountry.recovered}</li>
+      <li style={{ color: "red" }}>Confirmed: {currentCountry.cases}</li>
+      <li style={{ color: "#4badff" }}>
+        Recovered: {currentCountry.recovered}
+      </li>
       <li>Deaths: {currentCountry.deaths}</li>
     </ul>
-    <label htmlFor="countries">Change Country :</label>
+    <label htmlFor="countries">Countries :</label>
     <select
       id="countries"
       onBlur={null}

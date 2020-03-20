@@ -30,7 +30,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO />
       {error && (
         <>
           <h1>Error</h1>
