@@ -1,32 +1,40 @@
 import React from "react"
 
-const useFetchCountries = countries => {
-  const [data, setData] = React.useState([])
+const useFetchCountries = () => {
+  const [data, setData] = React.useState(null)
   const [loading, setLoading] = React.useState(true)
   const [error, setError] = React.useState("")
+
   React.useEffect(() => {
-    const fetchCountry = async country => {
+    const getData = async () => {
       try {
-        const response = await fetch(
-          `https://covid19.mathdro.id/api/countries/${country}`
+        const allResponse = await fetch(
+          "https://coronavirus-19-api.herokuapp.com/all"
         )
-        const json = await response.json()
-        if (json.error) throw json.error
-        setData(data => [...data, { ...json, name: country }])
+        const countriesResponse = await fetch(
+          "https://coronavirus-19-api.herokuapp.com/countries"
+        )
+        const allJson = await allResponse.json()
+        const countriesJson = await countriesResponse.json()
+        if (allJson.error || countriesJson.error)
+          throw new Error({
+            allError: allJson.error,
+            countriesError: countriesJson.error,
+          })
+
+        setData({
+          all: allJson,
+          countries: countriesJson,
+        })
         setLoading(false)
       } catch (err) {
         setError(err)
         setLoading(false)
       }
     }
-    countries.forEach(country => {
-      fetchCountry(country)
-    })
-  }, [countries])
-  return {
-    data,
-    loading,
-    error,
-  }
+    getData()
+  }, [])
+  return { data, loading, error }
 }
+
 export default useFetchCountries
