@@ -1,11 +1,10 @@
 import React from "react"
-import Layout from "../components/layout"
 import useFetchCountries from "../hooks/useFetchCountries"
 import SEO from "../components/seo"
 import { scaleLinear } from "d3-scale"
 import Loader from "react-loader"
-import EarthScene from "../components/EarthScene"
 import Selector from "../components/Selector"
+import BackgroundImage from "../components/bgImage"
 const IndexPage = () => {
   const { data, loading, error } = useFetchCountries()
   const [currentCountry, setCurrentCountry] = React.useState("")
@@ -29,7 +28,7 @@ const IndexPage = () => {
   }
 
   return (
-    <Layout>
+    <div>
       <SEO />
       {error && (
         <>
@@ -39,17 +38,26 @@ const IndexPage = () => {
       )}
       {loading && <Loader color="white" />}
       {!loading && !error && (
-        <>
+        <BackgroundImage fileName="one.jpg">
+          <div
+            className="overlay"
+            style={{
+              backgroundColor: currentCountry.color,
+              width: "100%",
+              height: "100%",
+              opacity: "0.2",
+              position: "absolute",
+            }}
+          />
           <Selector
             currentCountry={currentCountry}
             calculateColor={calculateColor}
             setCurrentCountry={setCurrentCountry}
             data={data}
           />
-          <EarthScene color={currentCountry.color} />
-        </>
+        </BackgroundImage>
       )}
-    </Layout>
+    </div>
   )
 }
 

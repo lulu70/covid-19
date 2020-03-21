@@ -1,7 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
-
+import BackgroundImg from "gatsby-background-image"
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
  * images with lazy loading and reduced file sizes. The image is loaded using a
@@ -13,20 +12,36 @@ import Img from "gatsby-image"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const Image = () => {
+const BackgroundImage = ({ fileName, children }) => {
   const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
+    {
+      allFile {
+        nodes {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
           }
+          relativePath
         }
       }
     }
   `)
-
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  const node = data.allFile.nodes.find(({ relativePath }) => {
+    return relativePath === fileName
+  })
+  return (
+    <BackgroundImg
+      Tag="section"
+      fluid={node.childImageSharp.fluid}
+      backgroundColor={`black`}
+      style={{
+        height: "100vh",
+      }}
+    >
+      {children}
+    </BackgroundImg>
+  )
 }
 
-export default Image
+export default BackgroundImage

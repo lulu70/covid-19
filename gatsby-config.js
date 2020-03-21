@@ -1,18 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Covid-19 (corona) virus state of recovery`,
-    description: `Corona (covid-19) virus 3d simulation `,
+    title: `test`,
+    description: `test`,
     author: `Lior cohen`,
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "UA-161489342-1",
-        head: true,
-        anonymize: true,
-      },
-    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
