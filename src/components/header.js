@@ -1,18 +1,20 @@
 import PropTypes from "prop-types"
 import React from "react"
-
+import { Link } from "gatsby"
 const Header = ({ siteTitle }) => (
-  <header style={{}}>
-    <div
+  <header>
+    <Link
+      to="/"
       style={{
         margin: `0 auto`,
         padding: `1.45rem 1.0875rem`,
+        textDecoration: "none",
       }}
     >
       <h1 style={{ margin: 0, textAlign: "center", color: "#00FF41" }}>
         {siteTitle}
       </h1>
-    </div>
+    </Link>
   </header>
 )
 
