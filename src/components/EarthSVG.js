@@ -1,9 +1,9 @@
 import React from "react"
 
-const EarthSVG = ({ colors, handleClick }) => {
+const EarthSVG = ({ colors, handleClick, percentage }) => {
   return (
     <svg
-      style={{ flex: 7 }}
+      style={{ flex: 7, backgroundColor: "lightblue" }}
       // height={200}
       viewBox="0 0 2000 1001"
       width={400}
@@ -16,6 +16,26 @@ const EarthSVG = ({ colors, handleClick }) => {
         <style type="text/css" id="style6">
           {"path{fill-rule:evenodd}"}
         </style>
+        <linearGradient id="gradient" gradientTransform="rotate(0)">
+          <stop offset="0%" stopColor="black"></stop>
+          <stop
+            offset={percentage ? percentage.deathPercentage : "0%"}
+            stopColor="black"
+          ></stop>
+          <stop
+            offset={percentage ? percentage.deathPercentage : "0%"}
+            stopColor="blue"
+          ></stop>
+          <stop
+            offset={percentage ? percentage.recoveredPercentage : "0%"}
+            stopColor="blue"
+          ></stop>
+          <stop
+            offset={percentage ? percentage.recoveredPercentage : "0%"}
+            stopColor="red"
+          ></stop>
+          <stop offset="100%" stopColor="red"></stop>
+        </linearGradient>
       </defs>
       <path
         onClick={handleClick}

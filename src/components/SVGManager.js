@@ -1,5 +1,6 @@
 import React from "react"
 import calculateColor from "../helpers/calculateColor"
+import calculatePercentage from "../helpers/calculatePercentage"
 import EarthSVG from "./EarthSVG"
 
 function SVGManager({ currentCountry, countries, handleClick }) {
@@ -10,23 +11,30 @@ function SVGManager({ currentCountry, countries, handleClick }) {
       return { ...pre, [country.country]: "white" }
     }, {})
     if (currentCountry.country === "Global") {
-      const colors = countries.reduce(
-        (pre, country) => ({
-          ...pre,
-          [country.country]: calculateColor(country),
-        }),
-        {}
-      )
-      setColors(colors)
+      // const colors = countries.reduce(
+      //   (pre, country) => ({
+      //     ...pre,
+      //     [country.country]: calculateColor(country),
+      //   }),
+      //   {}
+      // )
+      setColors(initialColors)
     } else {
       setColors(() => ({
         ...initialColors,
-        [currentCountry.country]: currentCountry.color,
+        [currentCountry.country]: "url(#gradient)",
       }))
     }
   }, [currentCountry, countries])
 
-  return <EarthSVG colors={colors} handleClick={handleClick} />
+  const percentage = calculatePercentage(currentCountry)
+  return (
+    <EarthSVG
+      colors={colors}
+      handleClick={handleClick}
+      percentage={percentage}
+    />
+  )
 }
 
 export default SVGManager
