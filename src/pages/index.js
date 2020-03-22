@@ -3,7 +3,7 @@ import useFetchCountries from "../hooks/useFetchCountries"
 import SEO from "../components/seo"
 import Loader from "react-loader"
 import Selector from "../components/Selector"
-import SVG from "../components/SVG"
+import SVGManager from "../components/SVGManager"
 import calculateColor from "../helpers/calculateColor"
 
 const IndexPage = () => {
@@ -39,8 +39,7 @@ const IndexPage = () => {
             setCurrentCountry={setCurrentCountry}
             data={data}
           />
-          <SVG
-            style={{ flex: 7 }}
+          <SVGManager
             currentCountry={currentCountry}
             countries={data.countries}
           />

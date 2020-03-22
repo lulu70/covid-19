@@ -1,32 +1,9 @@
 import React from "react"
-import calculateColor from "../helpers/calculateColor"
 
-function SvgComponent({ currentCountry, countries, ...props }) {
-  const [colors, setColors] = React.useState({})
-
-  React.useEffect(() => {
-    const initialColors = countries.reduce((pre, country) => {
-      return { ...pre, [country.country]: "white" }
-    }, {})
-    if (currentCountry.country === "Global") {
-      const colors = countries.reduce(
-        (pre, country) => ({
-          ...pre,
-          [country.country]: calculateColor(country),
-        }),
-        {}
-      )
-      setColors(colors)
-    } else {
-      setColors(() => ({
-        ...initialColors,
-        [currentCountry.country]: currentCountry.color,
-      }))
-    }
-  }, [currentCountry, countries])
-
+const EarthSVG = ({ colors }) => {
   return (
     <svg
+      style={{ flex: 7 }}
       // height={200}
       viewBox="0 0 2000 1001"
       width={400}
@@ -34,7 +11,6 @@ function SvgComponent({ currentCountry, countries, ...props }) {
       strokeLinejoin="round"
       stroke="#000"
       fill="none"
-      {...props}
     >
       <defs id="prefix__defs4">
         <style type="text/css" id="style6">
@@ -1733,4 +1709,4 @@ function SvgComponent({ currentCountry, countries, ...props }) {
   )
 }
 
-export default SvgComponent
+export default EarthSVG
