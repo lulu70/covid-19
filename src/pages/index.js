@@ -5,6 +5,7 @@ import Loader from "react-loader"
 import Selector from "../components/Selector"
 import SVGManager from "../components/SVGManager"
 import calculateColor from "../helpers/calculateColor"
+import "../components/layout.css"
 
 const IndexPage = () => {
   const { data, loading, error } = useFetchCountries()

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `test`,
-    description: `test`,
+    title: `covid-19-state-of-recovery`,
+    description: `covid 19 state of recovery presented on an interactive map`,
     author: `Lior cohen`,
   },
   plugins: [
@@ -18,17 +18,17 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `covid-19-state-of-recovery`,
+        short_name: `covid-19`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `black`,
+        theme_color: `black`,
         display: `minimal-ui`,
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }
