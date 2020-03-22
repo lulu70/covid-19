@@ -15,8 +15,9 @@ const Selector = ({
       padding: "1rem",
       fontFamily: "none",
       display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
+      flexDirection: "column",
+      // justifyContent: "center",
+      // alignItems: "center",
       zIndex: 10,
     }}
   >
@@ -27,7 +28,16 @@ const Selector = ({
         flexDirection: "column",
         justifyContent: "flex-start",
       }}
-    >
+    ></div>
+    <div>
+      <h3 style={{ fontWeight: "normal" }}>{currentCountry.country}</h3>
+      <ul>
+        <li style={{ color: "red" }}>Confirmed: {currentCountry.cases}</li>
+        <li style={{ color: "#4badff" }}>
+          Recovered: {currentCountry.recovered}
+        </li>
+        <li>Deaths: {currentCountry.deaths}</li>
+      </ul>
       <label htmlFor="countries">Countries :</label>
       <select
         id="countries"
@@ -58,16 +68,6 @@ const Selector = ({
           <option key={country}>{country}</option>
         ))}
       </select>
-    </div>
-    <div>
-      <h3 style={{ fontWeight: "normal" }}>{currentCountry.country}</h3>
-      <ul>
-        <li style={{ color: "red" }}>Confirmed: {currentCountry.cases}</li>
-        <li style={{ color: "#4badff" }}>
-          Recovered: {currentCountry.recovered}
-        </li>
-        <li>Deaths: {currentCountry.deaths}</li>
-      </ul>
     </div>
   </div>
 )

@@ -1,11 +1,24 @@
 import * as React from "react"
+import calculateColor from "../helpers/calculateColor"
 
-function SvgComponent(props) {
+function SvgComponent({ currentCountry, countries, ...props }) {
+  React.useEffect(() => {
+    countries.forEach(country => {
+      const color = calculateColor(country)
+      const paths = Array.from(document.querySelectorAll("path"))
+      const path = paths.find(path => {
+        const name = path.getAttribute("data-name")
+        return name === country.country
+      })
+      console.log(color)
+      path && path.setAttribute("fill", color)
+    })
+  }, [countries])
   return (
     <svg
-      height={1001}
+      // height={200}
       viewBox="0 0 2000 1001"
-      width={2000}
+      width={400}
       id="prefix__svg2"
       strokeLinejoin="round"
       stroke="#000"
