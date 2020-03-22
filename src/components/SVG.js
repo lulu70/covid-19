@@ -2,24 +2,28 @@ import React from "react"
 import calculateColor from "../helpers/calculateColor"
 
 function SvgComponent({ currentCountry, countries, ...props }) {
-  const initialColors = countries.reduce((pre, country) => {
-    return { ...pre, [country.country]: "white" }
-  }, {})
-  const [colors, setColors] = React.useState(initialColors)
+  const [colors, setColors] = React.useState({})
 
   React.useEffect(() => {
+    const initialColors = countries.reduce((pre, country) => {
+      return { ...pre, [country.country]: "white" }
+    }, {})
     if (currentCountry.country === "Global") {
-      const colors = countries.reduce((pre, country) => {
-        return { ...pre, [country.country]: calculateColor(country) }
-      }, {})
+      const colors = countries.reduce(
+        (pre, country) => ({
+          ...pre,
+          [country.country]: calculateColor(country),
+        }),
+        {}
+      )
       setColors(colors)
     } else {
-      setColors({
+      setColors(() => ({
         ...initialColors,
         [currentCountry.country]: currentCountry.color,
-      })
+      }))
     }
-  }, [initialColors, countries, currentCountry])
+  }, [currentCountry, countries])
 
   return (
     <svg
