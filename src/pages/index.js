@@ -4,7 +4,7 @@ import SEO from "../components/seo"
 import { scaleLinear } from "d3-scale"
 import Loader from "react-loader"
 import Selector from "../components/Selector"
-import BackgroundImage from "../components/bgImage"
+import SVG from "../components/SVG"
 const IndexPage = () => {
   const { data, loading, error } = useFetchCountries()
   const [currentCountry, setCurrentCountry] = React.useState("")
@@ -38,24 +38,16 @@ const IndexPage = () => {
       )}
       {loading && <Loader color="white" />}
       {!loading && !error && (
-        <BackgroundImage fileName="one.jpg">
-          <div
-            className="overlay"
-            style={{
-              backgroundColor: currentCountry.color,
-              width: "100%",
-              height: "100%",
-              opacity: "0.2",
-              position: "absolute",
-            }}
-          />
+        <div style={{ display: "flex", color: "white" }}>
+          <pre>{JSON.stringify(currentCountry, null, 2)}</pre>
           <Selector
             currentCountry={currentCountry}
             calculateColor={calculateColor}
             setCurrentCountry={setCurrentCountry}
             data={data}
           />
-        </BackgroundImage>
+          <SVG />
+        </div>
       )}
     </div>
   )

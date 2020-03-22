@@ -9,8 +9,9 @@ const Selector = ({
   <div
     style={{
       color: "white",
-      width: "100%",
-      height: "100%",
+      // width: "100%",
+      // height: "100%"
+      flex: 1,
       padding: "1rem",
       fontFamily: "none",
       display: "flex",
