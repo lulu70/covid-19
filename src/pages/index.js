@@ -20,7 +20,17 @@ const IndexPage = () => {
       })
     }
   }, [error, loading, data])
-
+  const handleClick = e => {
+    const name = e.target.getAttribute("data-name")
+    const selectedCountry = data.countries.find(
+      ({ country }) => country === name
+    )
+    const color = calculateColor(selectedCountry)
+    setCurrentCountry({
+      color,
+      ...selectedCountry,
+    })
+  }
   return (
     <div>
       <SEO />
@@ -42,6 +52,7 @@ const IndexPage = () => {
           <SVGManager
             currentCountry={currentCountry}
             countries={data.countries}
+            handleClick={handleClick}
           />
         </div>
       )}

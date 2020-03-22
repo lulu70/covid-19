@@ -1,6 +1,6 @@
 import React from "react"
 
-const EarthSVG = ({ colors }) => {
+const EarthSVG = ({ colors, handleClick }) => {
   return (
     <svg
       style={{ flex: 7 }}
@@ -18,6 +18,7 @@ const EarthSVG = ({ colors }) => {
         </style>
       </defs>
       <path
+        onClick={handleClick}
         id="prefix__AF"
         data-name="Afghanistan"
         data-id="AF"
@@ -26,6 +27,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__AO"
         data-name="Angola"
         data-id="AO"
@@ -34,6 +36,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__AL"
         data-name="Albania"
         data-id="AL"
@@ -42,14 +45,16 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__AE"
-        data-name="United Arab Emirates"
+        data-name="UAE"
         data-id="AE"
         d="M1283.9 408.6l-1.3-2.2-3 3.9-3.7 4.1-3.3 4.3-3.3-.2-4.6-.2-4.2 1-.3-1.7-1 .3.4 1.5 2.6 6.4 16.8 3.2 1-1.3-.1-2.6 1.4-2.6-.3-2.6 2.4-1.3-1.1-.8.1-4.2h2.8l-1.3-5z"
         fill={colors.UAE}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__AR"
         data-name="Argentina"
         data-id="AR"
@@ -58,6 +63,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__AM"
         data-name="Armenia"
         data-id="AM"
@@ -66,6 +72,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__AU"
         data-name="Australia"
         data-id="AU"
@@ -74,6 +81,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__AT"
         data-name="Austria"
         data-id="AT"
@@ -82,6 +90,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__AZ"
         data-name="Azerbaijan"
         data-id="AZ"
@@ -90,6 +99,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__BI"
         data-name="Burundi"
         data-id="BI"
@@ -98,6 +108,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__BE"
         data-name="Belgium"
         data-id="BE"
@@ -106,6 +117,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__BJ"
         data-name="Benin"
         data-id="BJ"
@@ -114,6 +126,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__BF"
         data-name="Burkina Faso"
         data-id="BF"
@@ -122,6 +135,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__BD"
         data-name="Bangladesh"
         data-id="BD"
@@ -130,6 +144,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__BG"
         data-name="Bulgaria"
         data-id="BG"
@@ -138,14 +153,16 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__BA"
-        data-name="Bosnia and Herz."
+        data-name="Bosnia and Herzegovina"
         data-id="BA"
         d="M1062.2 284.9l-2.3.1-1 1.3-1.9-1.4-.9 2.5 2.7 2.9 1.3 1.9 2.5 2.3 2 1.4 2.2 2.5 4.7 2.4.4-3.4 1.5-1.4.9-.6 1.2-.3.5-2.9-2.7-2.3 1-2.7h-1.8 0l-2.4-1.4-3.5.1-4.4-1z"
         fill={colors["Bosnia and Herzegovina"]}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__BY"
         data-name="Belarus"
         data-id="BY"
@@ -154,6 +171,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__BZ"
         data-name="Belize"
         data-id="BZ"
@@ -162,6 +180,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__BO"
         data-name="Bolivia"
         data-id="BO"
@@ -170,6 +189,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__BR"
         data-name="Brazil"
         data-id="BR"
@@ -178,6 +198,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__BN"
         data-name="Brunei"
         data-id="BN"
@@ -186,6 +207,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__BT"
         data-name="Bhutan"
         data-id="BT"
@@ -194,6 +216,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__BW"
         data-name="Botswana"
         data-id="BW"
@@ -202,14 +225,16 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__CF"
-        data-name="Central African Rep."
+        data-name="CAR"
         data-id="CF"
         d="M1110.5 517.3l-.5-.3-2-1.8-.3-2 .8-2.6V508l-3.3-4-.7-2.7-3.5 1.1-2.8 2.5-4 7-5.2 2.9-5.4-.4-1.6.6.6 2.3-2.9 2.2-2.3 2.5-7.1 2.4-1.4-1.4-.9-.2-1 1.7-4.7.4-2.7 6.5-1.4 1.1-.4 5 .6 2.7-.4 1.9 2.6 3.3.5 2.3 2.1 3.2 2.6 2.1.3 2.9.6 1.8 2.9-5.9 3.3-3.4 3.8 1.1 3.6.4.5-4.5 2.2-3.2 3-2 4.6 2.1 3.6 2.4 4.1.6 4.2 1.2 1.6-3.8.8-.5 2.6.6 6.2-3.1 2.2 1.3 1.8-.2.9-1.5 2-.6 4.3.7 3.6.1 1.8-.6-.9-2.1-4.2-2.5-1.5-3.8-2.4-2.7-3.8-3.4-.1-2-3.1-2.6-3.8-2.5z"
         fill={colors.CAR}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__CA"
         data-name="Canada"
         data-id="CA"
@@ -218,6 +243,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__CH"
         data-name="Switzerland"
         data-id="CH"
@@ -226,6 +252,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__CL"
         data-name="Chile"
         data-id="CL"
@@ -234,6 +261,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__CN"
         data-name="China"
         data-id="CN"
@@ -242,14 +270,16 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__CI"
-        data-name="C\xF4te d'Ivoire"
+        data-name="Ivory Coast"
         data-id="CI"
         d="M946.5 506.2l-2.3.9-1.3.8-.9-2.7-1.6.7-1-.1-1 1.9-4.3-.1-1.6-1-.7.6-1.1.5-.5 2.2 1.3 2.6 1.3 5.1-2 .8-.6.9.4 1.2-.3 2.8h-.9l-.3 1.8.6 3.1-1.2 2.8 1.6 1.8 1.8.4 2.3 2.7.2 2.5-.5.8-.5 5.2 1.1.2 5.6-2.4 3.9-1.8 6.6-1.1 3.6-.1 3.9 1.3 2.6-.1.2-2.5-2.4-5.5 1.5-7.2 2.3-5.3-1.4-9.1-3.8-1.6-2.7.2-1.9 1.6-2.5-1.3-1-2.1-2.5-1.4z"
         fill={colors["Ivory Coast"]}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__CM"
         data-name="Cameroon"
         data-id="CM"
@@ -258,14 +288,16 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__CD"
-        data-name="Dem. Rep. Congo"
+        data-name="DRC"
         data-id="CD"
         d="M1124.9 539.4l-4.3-.7-2 .6-.9 1.5-1.8.2-2.2-1.3-6.2 3.1-2.6-.6-.8.5-1.6 3.8-4.2-1.2-4.1-.6-3.6-2.4-4.6-2.1-3 2-2.2 3.2-.5 4.5-.3 3.8-1.6 3.4-1.1 4-.7 5.6.3 3.6-.9 2.2-.2 2.4-.6 2-3.7 3.1-2.6 3.2-2.5 6.2.2 5.3-1.4 2-3.3 3.1-3.4 4-2-1.1-.4-1.8-3.1-.1-1.9 2.4-1.5-.6-2 1.3-.9 1.7-.2 2.7-1.5.7.8 2 2.3-.9 1.7.1 1.9-.7 16.6.1 1.3 4.7 1.6 3.8 1.3 2.1 2.1 3.3 3.7-.5 1.9-.9 3 .9.9-1.6 1.5-3.7 3.4-.3.3-1.1h2.9l-.5 2.3h6.8v4l1.2 2.4-.9 3.8.3 4 1.9 2.3-.5 7.6 1.4-.6 2.4.2 3.5-1 2.6.4 1.9.1.3 2 2.6-.1 3.5.6 1.8 2.8 4.5.9 3.4-2 1.2 3.4 4.3.8 2 2.8 2.1 3.5h4.3l-.3-6.9-1.5 1.2-3.9-2.5-1.4-1.1.8-6.4 1.2-7.5-1.2-2.8 1.6-4.1 1.6-.7 7.5-1.1 1 .3.2-1.1-1.5-1.7-.7-3.5-3.4-3.5-1.8-4.5 1-2.7-1.5-3.6 1.1-10.2.1.1-.1-1.1-1.4-2.9.6-3.5.8-.4.2-3.8 1.6-1.8.1-4.8 1.3-2.4.3-5.1 1.2-3 2.1-3.3 2.2-1.7 1.8-2.3-2.3-.8.3-7.5h0l-5-4.2-1.4-2.7-3.1 1.3-2.6-.4-1.5 1.1-2.5-.8-3.5-5.2-1.8.6-3.6-.1z"
         fill={colors.DRC}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__CG"
         data-name="Congo"
         data-id="CG"
@@ -274,6 +306,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__CO"
         data-name="Colombia"
         data-id="CO"
@@ -282,6 +315,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__CR"
         data-name="Costa Rica"
         data-id="CR"
@@ -290,6 +324,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__CU"
         data-name="Cuba"
         data-id="CU"
@@ -298,14 +333,16 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__CZ"
-        data-name="Czech Rep."
+        data-name="Czechia"
         data-id="CZ"
         d="M1049.4 248.5l-2.1.6-1.4-.7-1.1 1.2-3.4 1.2-1.7 1.5-3.4 1.3 1 1.9.7 2.6 2.6 1.5 2.9 2.6 3.8 2 2.6-2.5 1.7-.5 4 1.9 2.3-.3 2.3 1.2.6-1.4 2.2.1 1.6-.6.1-.6.9-.3.2-1.4 1.1-.3.6-1.1h1.5l-2.6-3.1-3.6-.3-.7-2-3.4-.6-.6 1.5-2.7-1.2.1-1.7-3.7-.6-2.4-1.9z"
         fill={colors.Czechia}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__DE"
         data-name="Germany"
         data-id="DE"
@@ -314,6 +351,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__DJ"
         data-name="Djibouti"
         data-id="DJ"
@@ -322,6 +360,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__DK"
         data-name="Denmark"
         data-id="DK"
@@ -330,14 +369,16 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__DO"
-        data-name="Dominican Rep."
+        data-name="Dominican Republic"
         data-id="DO"
         d="M579.6 457.4v1.8l1.4 1 2.6-4.4 2-.9.6 1.6 2.2-.4 1.1-1.2 1.8.3 2.6-.2 2.5 1.3 2.3-2.6-2.5-2.3-2.4-.2.3-1.9-3 .1-.8-2.2-1.4.1-3.1-1.6-4.4-.1-.8 1.1.2 3.5-.7 2.4-1.5 1.1 1.2 1.9-.2 1.8z"
         fill={colors["Dominican Republic"]}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__DZ"
         data-name="Algeria"
         data-id="DZ"
@@ -346,6 +387,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__EC"
         data-name="Ecuador"
         data-id="EC"
@@ -354,6 +396,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__EG"
         data-name="Egypt"
         data-id="EG"
@@ -362,6 +405,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__ER"
         data-name="Eritrea"
         data-id="ER"
@@ -370,6 +414,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__EE"
         data-name="Estonia"
         data-id="EE"
@@ -378,6 +423,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__ET"
         data-name="Ethiopia"
         data-id="ET"
@@ -386,6 +432,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__FI"
         data-name="Finland"
         data-id="FI"
@@ -394,6 +441,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__FJ"
         data-name="Fiji"
         data-id="FJ"
@@ -402,6 +450,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__GA"
         data-name="Gabon"
         data-id="GA"
@@ -410,14 +459,16 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__GB"
-        data-name="United Kingdom"
+        data-name="UK"
         data-id="GB"
         d="M950 227.5l-4.9-3.7-3.9.3.8 3.2-1.1 3.2 2.9-.1 3.5 1.3 2.7-4.2zm13-24.3l-5.5.5-3.6-.4-3.7 4.8-1.9 6.1 2.2 3 .1 5.8 2.6-2.8 1.4 1.6-1.7 2.7 1 1.6 5.7 1.1h.1l3.1 3.8-.8 3.5h0l-7.1-.6-1 4 2.6 3.3-5.1 1.9 1.3 2.4 7.5 1h0l-4.3 1.3-7.3 6.5 2.5 1.2 3.5-2.3 4.5.7 3.3-2.9 2.2 1.2 8.3-1.7 6.5.1 4.3-3.3-1.9-3.1 2.4-1.8.5-3.9-5.8-1.2-1.3-2.3-2.9-6.9-3.2-1-4.1-7.1-.4-.6-4.8-.4 4.2-5.3 1.3-4.9h-5l-4.7.8 5-6.4z"
         fill={colors.UK}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__GE"
         data-name="Georgia"
         data-id="GE"
@@ -426,6 +477,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__GH"
         data-name="Ghana"
         data-id="GH"
@@ -434,6 +486,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__GN"
         data-name="Guinea"
         data-id="GN"
@@ -442,6 +495,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__GM"
         data-name="Gambia"
         data-id="GM"
@@ -450,6 +504,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__GW"
         data-name="Guinea-Bissau"
         data-id="GW"
@@ -458,14 +513,16 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__GQ"
-        data-name="Eq. Guinea"
+        data-name="Equatorial Guinea"
         data-id="GQ"
         d="M1040.1 557.8l-9.2-.2-1.9 7.2 1 .9 1.9-.3h8.2v-7.6z"
         fill={colors["Equatorial Guinea"]}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__GR"
         data-name="Greece"
         data-id="GR"
@@ -474,6 +531,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__GL"
         data-name="Greenland"
         data-id="GL"
@@ -482,6 +540,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__GT"
         data-name="Guatemala"
         data-id="GT"
@@ -490,6 +549,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__GY"
         data-name="Guyana"
         data-id="GY"
@@ -498,6 +558,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__HN"
         data-name="Honduras"
         data-id="HN"
@@ -506,6 +567,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__HR"
         data-name="Croatia"
         data-id="HR"
@@ -514,6 +576,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__HT"
         data-name="Haiti"
         data-id="HT"
@@ -522,6 +585,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__HU"
         data-name="Hungary"
         data-id="HU"
@@ -530,6 +594,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__ID"
         data-name="Indonesia"
         data-id="ID"
@@ -538,6 +603,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__IN"
         data-name="India"
         data-id="IN"
@@ -546,6 +612,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__IE"
         data-name="Ireland"
         data-id="IE"
@@ -554,6 +621,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__IR"
         data-name="Iran"
         data-id="IR"
@@ -562,6 +630,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__IQ"
         data-name="Iraq"
         data-id="IQ"
@@ -570,6 +639,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__IS"
         data-name="Iceland"
         data-id="IS"
@@ -578,6 +648,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__IL"
         data-name="Israel"
         data-id="IL"
@@ -586,6 +657,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__IT"
         data-name="Italy"
         data-id="IT"
@@ -594,6 +666,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__JM"
         data-name="Jamaica"
         data-id="JM"
@@ -602,6 +675,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__JO"
         data-name="Jordan"
         data-id="JO"
@@ -610,6 +684,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__JP"
         data-name="Japan"
         data-id="JP"
@@ -618,6 +693,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__KZ"
         data-name="Kazakhstan"
         data-id="KZ"
@@ -626,6 +702,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__KE"
         data-name="Kenya"
         data-id="KE"
@@ -634,6 +711,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__KG"
         data-name="Kyrgyzstan"
         data-id="KG"
@@ -642,6 +720,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__KH"
         data-name="Cambodia"
         data-id="KH"
@@ -650,14 +729,16 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__KR"
-        data-name="Korea"
+        data-name="S. Korea"
         data-id="KR"
         d="M1637.3 331.7l6.2 5.5-3.4 1.1 5.2 6.8 1.1 4.8 2.1 3.5 4.5-.5 3.2-2.7 4.2-1.2.5-3.6-3.4-7.5-3.3-4.2-8.2-7.6.1 1.6-2.1.4-3.5.3-.7 2.9-2.4-.2-.1.6z"
         fill={colors["S. Korea"]}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__KW"
         data-name="Kuwait"
         data-id="KW"
@@ -666,14 +747,16 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__LA"
-        data-name="Lao PDR"
+        data-name="Laos"
         data-id="LA"
         d="M1574.8 481.8l.2-6.4-2-4.5-4.8-4.4-4.3-5.6-5.7-7.5-7.3-3.8 1.3-2.3 3.3-1.7-3-5.5-6.8-.1-3.4-5.7-4-5.1-2.7 1 1.9 7.2-2.9-.1-.7-1.5-4.1 4.1-.8 2.4 2.6 1.9.9 3.8 3.8.3-.4 6.7 1 5.7 5.3-3.8 1.8 1.2 3.2-.2.8-2.2 4.3.4 4.9 5.2 1.3 6.3 5.2 5.5.5 5.4-1.5 2.9 4.9 2.4 2-4.3 5.2 2.3z"
         fill={colors.Laos}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__LB"
         data-name="Lebanon"
         data-id="LB"
@@ -682,6 +765,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__LR"
         data-name="Liberia"
         data-id="LR"
@@ -690,6 +774,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__LY"
         data-name="Libya"
         data-id="LY"
@@ -698,6 +783,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__LK"
         data-name="Sri Lanka"
         data-id="LK"
@@ -706,6 +792,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__LS"
         data-name="Lesotho"
         data-id="LS"
@@ -714,6 +801,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__LT"
         data-name="Lithuania"
         data-id="LT"
@@ -722,6 +810,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__LU"
         data-name="Luxembourg"
         data-id="LU"
@@ -730,6 +819,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__LV"
         data-name="Latvia"
         data-id="LV"
@@ -738,6 +828,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__MA"
         data-name="Morocco"
         data-id="MA"
@@ -746,6 +837,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__MD"
         data-name="Moldova"
         data-id="MD"
@@ -754,6 +846,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__MG"
         data-name="Madagascar"
         data-id="MG"
@@ -762,6 +855,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__MX"
         data-name="Mexico"
         data-id="MX"
@@ -770,14 +864,16 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__MK"
-        data-name="Macedonia"
+        data-name="North Macedonia"
         data-id="MK"
         d="M1094 304.8l-2.8-2-2.4.1-1.7.4-1.1.2-2.9 1-.1 1.2h-.7 0l-.4 2.1.9 2.6 2.3 1.6 3.3-.6 1.9-1.3 2.8.1.7-1.1 1-.2-.8-4.1z"
         fill={colors["North Macedonia"]}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__ML"
         data-name="Mali"
         data-id="ML"
@@ -786,6 +882,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__MM"
         data-name="Myanmar"
         data-id="MM"
@@ -794,6 +891,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__ME"
         data-name="Montenegro"
         data-id="ME"
@@ -802,6 +900,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__MN"
         data-name="Mongolia"
         data-id="MN"
@@ -810,6 +909,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__MZ"
         data-name="Mozambique"
         data-id="MZ"
@@ -818,6 +918,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__MR"
         data-name="Mauritania"
         data-id="MR"
@@ -826,6 +927,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__MW"
         data-name="Malawi"
         data-id="MW"
@@ -834,6 +936,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__MY"
         data-name="Malaysia"
         data-id="MY"
@@ -842,6 +945,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__NA"
         data-name="Namibia"
         data-id="NA"
@@ -850,6 +954,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__NE"
         data-name="Niger"
         data-id="NE"
@@ -858,6 +963,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__NG"
         data-name="Nigeria"
         data-id="NG"
@@ -866,6 +972,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__NI"
         data-name="Nicaragua"
         data-id="NI"
@@ -874,6 +981,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__NL"
         data-name="Netherlands"
         data-id="NL"
@@ -882,6 +990,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__NO"
         data-name="Norway"
         data-id="NO"
@@ -890,6 +999,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__NP"
         data-name="Nepal"
         data-id="NP"
@@ -898,6 +1008,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__NZ"
         data-name="New Zealand"
         data-id="NZ"
@@ -906,6 +1017,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__OM"
         data-name="Oman"
         data-id="OM"
@@ -914,6 +1026,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__PK"
         data-name="Pakistan"
         data-id="PK"
@@ -922,6 +1035,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__PA"
         data-name="Panama"
         data-id="PA"
@@ -930,6 +1044,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__PE"
         data-name="Peru"
         data-id="PE"
@@ -938,6 +1053,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__PH"
         data-name="Philippines"
         data-id="PH"
@@ -946,6 +1062,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__PG"
         data-name="Papua New Guinea"
         data-id="PG"
@@ -954,6 +1071,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__PL"
         data-name="Poland"
         data-id="PL"
@@ -962,14 +1080,16 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__KP"
-        data-name="Dem. Rep. Korea"
+        data-name="N. Korea"
         data-id="KP"
         d="M1644.7 302.3h0l-5.5-3.6.1 3.5-6.3 2.6 2.7 3.3-4.6-.2-3.6-2-1 4.4-3.8 3.4-2.1 4 3.3 1.7 3.4.7.8 1 .4 3.5 1.1 1.2-.9.7-.1 2.9 1.9 1 1.6.6.8 1.2 1.3-.5v-1.3l3.1 1.3.1-.6 2.4.2.7-2.9 3.5-.3 2.1-.4-.1-1.6-4.3-2.8-2.6-1 .2-.7-1.2-2.8 1.3-1.7 2.9-1 1-1.9.3-1.1 1.9-1.4-2.8-4.5.3-2.1.9-2 2.2.3h0l-1.4-1.1z"
         fill={colors["N. Korea"]}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__PT"
         data-name="Portugal"
         data-id="PT"
@@ -978,6 +1098,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__PY"
         data-name="Paraguay"
         data-id="PY"
@@ -986,6 +1107,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__PS"
         data-name="Palestine"
         data-id="PS"
@@ -994,6 +1116,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__QA"
         data-name="Qatar"
         data-id="QA"
@@ -1002,6 +1125,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__RO"
         data-name="Romania"
         data-id="RO"
@@ -1010,6 +1134,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__RU"
         data-name="Russia"
         data-id="RU"
@@ -1018,6 +1143,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__RW"
         data-name="Rwanda"
         data-id="RW"
@@ -1026,6 +1152,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__EH"
         data-name="W. Sahara"
         data-id="EH"
@@ -1034,6 +1161,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__SA"
         data-name="Saudi Arabia"
         data-id="SA"
@@ -1042,6 +1170,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__SD"
         data-name="Sudan"
         data-id="SD"
@@ -1050,14 +1179,16 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__SS"
-        data-name="S. Sudan"
+        data-name="Sudan"
         data-id="SS"
         d="M1166 508.7l-.7-2.2-2.9-2.5-.8-4.6.5-4.7-2.6-.5-.3 1.5-3.4.3 1.4 1.8.6 3.9-3 3.5-2.7 4.5-2.8.7-4.8-3.7-2.1 1.3-.5 1.9-2.9 1.2-.2 1.3h-5.5l-.8-1.3-4.1-.3-2 1.1-1.5-.5-3-3.7-1-1.8-4 .9-1.5 2.9-1.3 5.7-1.9 1.2-1.7.7 3.8 2.5 3.1 2.6.1 2 3.8 3.4 2.4 2.7 1.5 3.8 4.2 2.5.9 2.1 3.5 5.2 2.5.8 1.5-1.1 2.6.4 3.1-1.3 1.4 2.7 5 4.2h0l2.3-1.7 3.5 1.4 4.5-1.5 4 .1 3.4-3 3.4-3.8 3.8-4.2-3.5-6.9-2.6-1.5-1-2.5-2.9-3.1-3.4-.5 1.8-3.6 3-.1.8-2-.2-5-.8-.1v-3.1z"
         fill={colors.Sudan}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__SN"
         data-name="Senegal"
         data-id="SN"
@@ -1066,6 +1197,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__SL"
         data-name="Sierra Leone"
         data-id="SL"
@@ -1074,6 +1206,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__SV"
         data-name="El Salvador"
         data-id="SV"
@@ -1082,6 +1215,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__RS"
         data-name="Serbia"
         data-id="RS"
@@ -1090,6 +1224,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__SR"
         data-name="Suriname"
         data-id="SR"
@@ -1098,6 +1233,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__SK"
         data-name="Slovakia"
         data-id="SK"
@@ -1106,6 +1242,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__SI"
         data-name="Slovenia"
         data-id="SI"
@@ -1114,6 +1251,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__SE"
         data-name="Sweden"
         data-id="SE"
@@ -1122,14 +1260,16 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__SZ"
-        data-name="Swaziland"
+        data-name="Eswatini"
         data-id="SZ"
         d="M1150.5 736.6l-2.7-1.2-1.6.5-.7 1.8-1.6 2.4-.1 2.2 3 3.5 3.3-.7 1.3-2.8-.3-2.8-.6-2.9z"
         fill={colors.Eswatini}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__SY"
         data-name="Syria"
         data-id="SY"
@@ -1138,6 +1278,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__TD"
         data-name="Chad"
         data-id="TD"
@@ -1146,6 +1287,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__TG"
         data-name="Togo"
         data-id="TG"
@@ -1154,6 +1296,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__TH"
         data-name="Thailand"
         data-id="TH"
@@ -1162,6 +1305,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__TJ"
         data-name="Tajikistan"
         data-id="TJ"
@@ -1170,6 +1314,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__TM"
         data-name="Turkmenistan"
         data-id="TM"
@@ -1178,6 +1323,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__TL"
         data-name="Timor-Leste"
         data-id="TL"
@@ -1186,6 +1332,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__TN"
         data-name="Tunisia"
         data-id="TN"
@@ -1194,6 +1341,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__TR"
         data-name="Turkey"
         data-id="TR"
@@ -1202,6 +1350,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__TW"
         data-name="Taiwan"
         data-id="TW"
@@ -1210,6 +1359,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__TZ"
         data-name="Tanzania"
         data-id="TZ"
@@ -1218,6 +1368,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__UG"
         data-name="Uganda"
         data-id="UG"
@@ -1226,6 +1377,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__UA"
         data-name="Ukraine"
         data-id="UA"
@@ -1234,6 +1386,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__UY"
         data-name="Uruguay"
         data-id="UY"
@@ -1242,14 +1395,16 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__US"
-        data-name="United States"
+        data-name="USA"
         data-id="US"
         d="M116.7 450.7l2-.9 2.5-1.4.2-.4-.9-2.2-.7-.8-.8-.6-1.9-1.1-.4-.1-.4.6v1.3l-1.2 1-.4.7.4 2.3-.6 1.8 1.2.9 1-1.1zm-.6-9.9l.6-.7-1.2-1-1.8-.6-.7.5v.4l.5.5.6 1.4 2-.5zm-3-3.4l-2.6-.2-.6.7 2.9.2.3-.7zm-4.7-.9l-1.1-2.1-.3-.4-1.7.9.1.2.4 1.5 1.8.2.4.1.4-.4zm-8.3-4.2l.3-1.5-1.3-.1-1 .6-.4.5 1.6 1.1.8-.6zm412.1-173.2h-1.6l-1.3 2.4H373.4l-1.6 5.1-2.4 5.1-2.3 1.6 1.1-5.9-5.8-2.1-1.4 1.2-.4 2.9-1.8 5.4-4.2 8.3-4 5.6-4 5.6-5.4 5.8-1.1 4.7-2.8 5.3-3.9 5.2 1 3.4-1.9 5.2 1.5 5.4 1.3 2.2-.8 1.5.4 9 2.5 6.5-.8 3.5 1 1 4.6.7 1.3 1.7 2.8.3-.1 1.9 2.2.7 2.1 3.7-.3 3.2 6.3-.5 7-.7-1 1.3 7.1 3.1 10.7 4.4h15l.8-2.6h9.3l1.3 2.2 2.1 2 2.4 2.8.8 3.3.4 3.5 2.2 1.9 4 1.9 4.8-5 4.4-.1 3.1 2.5 1.6 4.4 1 3.7 2.4 3.6.2 4.5.8 3 3.9 2 3.6 1.4 2.1-.2-.6-2.2.4-3.1 1-4.4 1.9-2.8 3.7-3.1 6-2.7 6.1-4.7 4.9-1.5 3.5-.4 3.5 1.4 4.9-.8 3.3 3.4 3.8.2 2.4-1.2 1.7.9 1.3-.8-.9-1.3.7-2.5-.5-1.7 2.4-1 4.2-.4 4.7.7 6.2-.8 3 1.5 2 3 .9.3 6.1-2.9 1.9 1 3 5.3.8 3.5-2 4.2.4 2.5 1.6 4.9 2 5.5 1.8 1.4.4 2.8 2.6.8 1.7-.8 2-3.9.7-2.5.9-4.3-1.2-7.4.5-2.7-1.5-4.5-.7-5.4.1-4.4 1.8-4.5 3.5-3.8 3.7-3 6.9-4.1 1.3-2.2 3.3-2.3 2.8-.4 4.4-3.8 6-1.9 4.6-4.8.9-6.5.1-2.2-1.4-.4 1.5-6.2-3-2.1 3.2 1v-4.1l1.9-2.7-1 5.3 2 2.5-2.9 4.4.4.2 4.4-5.1 2.4-2.5.6-2.5-.9-1.1-.1-3.5 1.2 1.6 1.1.4-.1 1.6 5.2-4.9 2.5-4.5-1.4-.3 2.1-1.8-.4.8h3.3l7.8-1.9-1.1-1.2-7.9 1.2 4.8-1.8 3.1-.3 2.4-.3 4.1-1.1 2.4.1 3.8-1 1-1.7-1.1-1.4-.2 2.2-2.1-.1-.6-3.3 1.1-3.3 1.4-1.3 3.9-3.7 5.9-1.8 6-2.1 6.3-3-.2-2-2.1-3.5 2.8-8.5-1.5-1.8-3.7 1.1-1.1-1.7-5.5 4.7-3.2 4.9-2.7 2.8-2.5.9-1.7.3-1 1.6h-17l-2.7 1.2-6.7 4.2.2.9-.6 2.4-4.6 2-3.9-.5-4-.2-2.6.7-.3 1.8h0l-.1.6-5.8 3.7-4.5 1.8-2.9.8-3.7 1.7-4 .9-2.5-.3-2.7-1.3 2.7-2.4h0l2-2.2 3.7-3.4h0l.7-2.5.5-3.5-1.6-.7-4.3 2.8-.9-.1.3-1.5 3.8-2.5 1.6-2.8.7-2.8-2.7-2.4-3.7-1.3-1.7 2.4-1.4.6-2.2 3.1.4-2.1-2.6 1.5-2.1 2-2.6 3.1-1.3 2.6.1 3.8-1.8 4-3.3 3-1.4.9-1.6.7h-1.8l-.3-.4-.1-3.3.7-1.6.7-1.5.6-3 2.5-3.5 2.9-4.3 4.6-4.7h-.7l-5.4 4-.4-.7 2.9-2.3 4.7-4 3.7-.5 4.4-1.3 3.7.7h.1l4.7-.5-1.5-2.5h0l-1.2-.2h0l-1.4-.3-.4-1.7-5.1.5-5 1.4-2.5-2.3-2.5-.8 3.1-3.3-5.3 2-4.9 2.1-4.6 1.5-2.1-2.1-5.5 1.3.4-.9 4.6-2.6 4.7-2.5 5.9-2.1h0l-5.3-1.6-4.4.8-3.8-1.9-4.6-1-3.2-.4-1-1 .8-3.4zm-240.6-46.9l6.9-2.8v-1.8l-2.6-.4-3.4.9-6.4 2.1-2.2 2.7.7 1.6 7-2.3zm-38.7-16.4l2.3-2.3-2.9-.5-5.7 1 .8 1.6 1.6 1.1 3.9-.9zm1.2-22.3l-3.1 2.2.4.5 4.2-.4.3 1.1 1.7 1.2 4.9-1.2 1.2-.6-3.3-.8-1.6-1.5-3.4.6-1.3-1.1zM359 133.3l-4.4-1.1-10.2 2.8-3.2-.3-11 2.3-4.8.6-7.8 2.5-4.8 2.6-8.6 2.5-7.6.1-6.3 2.9 3.2 1.7.7 2.3-.8 2.7 2.3 2.1-1.2 3.5-9.2.2 4.3-2.8h-3.4l-13.1 2.7-9.1 2.3 1 3.3-1.2 2.2 4.5 1.4 6.9-.7 1.8 1.3 2.9-1.3 6.1-1.2h2.7l-5.9 2.1 1.1 1-2.5 2.6-5.5 1.8-2.5-.5-7 2.7-1.8-.9-4.1.4-5.3 3-7.6 3.1-5.8 3.4.3 2.4-4 3.3 1.4 1.4.5 2.7 7.2-1.1.4 2.1-3.3 2.1-3.6 3.5h2.8l7.2-2.3-1.6 2.9 3.6-2.1-.4 3 4.8-2.2.4 1.1 7.2-1.8-6.2 3.4-5.7 4.5-5.7 2.1-2.3 1.2-10.3 3.6-4.9 2.4-6.5.7-8.5 3.3-6.6 1.8-8.1 2.8-.4 1 10-1.7 6-2 6.9-2 6.1-1.7 2.8.5 8.1-2.6 4.5-2.8 10.5-3.1 3.9-2.6 6.6-1.8 7.6-2.5 8.9-4.2-.2-2.9 11.1-4.1 7.4-3.9 9.2-3.2-.4 1.4-6.7 1.8-8.3 5.7-3.2 3.5 6.4-1.3 6.1-1.9 6.5-1.3 2.9-.3 3.5-4.1 6.3-1.2 2.6 2.5 6 2.7 6.7-.5 5.7 2 3.2 1.1 3.3 6.1 3.7 1.7 7.1.2 4.1.4-2.7 5.5 1.6 4.9-3.3 5.2 2.5 1.9.6 2.2h0l5.1-2.9 3.1-3.7-4.6-3.8 1.5-6.8 1.1-4.2-1.7-2.7-.7-2.4.5-3-6.4 1.9-7.6 3.3-.2-3.9-.6-2.6-2.7-1.6-4.2-.1 35.4-32.4 24.3-20.2h0l-3.5-.7-4.1-1.6-6.5.8-2.2-.7-7.1-.5-6.2-1.6-4.8.5-4.9-.9 2-1.2-6.3-.3-3.3 1 .5-2.4z"
         fill={colors.USA}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__UZ"
         data-name="Uzbekistan"
         data-id="UZ"
@@ -1258,6 +1413,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__VE"
         data-name="Venezuela"
         data-id="VE"
@@ -1266,6 +1422,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__VN"
         data-name="Vietnam"
         data-id="VN"
@@ -1274,6 +1431,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__VU"
         data-name="Vanuatu"
         data-id="VU"
@@ -1282,6 +1440,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__YE"
         data-name="Yemen"
         data-id="YE"
@@ -1290,6 +1449,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__ZA"
         data-name="South Africa"
         data-id="ZA"
@@ -1298,6 +1458,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__ZM"
         data-name="Zambia"
         data-id="ZM"
@@ -1306,6 +1467,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__ZW"
         data-name="Zimbabwe"
         data-id="ZW"
@@ -1314,6 +1476,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__SO"
         data-name="Somalia"
         data-id="SO"
@@ -1322,6 +1485,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__GF"
         data-name="French Guiana"
         data-id="GF"
@@ -1330,6 +1494,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__FR"
         data-name="France"
         data-id="FR"
@@ -1338,6 +1503,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__ES"
         data-name="Spain"
         data-id="ES"
@@ -1346,6 +1512,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__AW"
         data-name="Aruba"
         data-id="AW"
@@ -1354,6 +1521,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__AI"
         data-name="Anguilla"
         data-id="AI"
@@ -1362,6 +1530,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__AD"
         data-name="Andorra"
         data-id="AD"
@@ -1370,14 +1539,16 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__AG"
-        data-name="Antigua and Barb."
+        data-name="Antigua and Barbuda"
         data-id="AG"
         d="M634.3 463.8l.2-.1V463.4l-.1-.1-.1-.2-.4-.2-.5.5v.2l.1.3.6.1.2-.2zm.2-3.5v-.5l-.1-.2h-.3l-.1-.1h-.1l-.1.1.1.6.5.3.1-.2z"
         fill={colors["Antigua and Barbuda"]}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__BS"
         data-name="Bahamas"
         data-id="BS"
@@ -1386,6 +1557,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__BM"
         data-name="Bermuda"
         data-id="BM"
@@ -1394,6 +1566,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__BB"
         data-name="Barbados"
         data-id="BB"
@@ -1402,6 +1575,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__KM"
         data-name="Comoros"
         data-id="KM"
@@ -1410,6 +1584,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__CV"
         data-name="Cape Verde"
         data-id="CV"
@@ -1418,14 +1593,16 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__KY"
-        data-name="Cayman Is."
+        data-name="Cayman Islands"
         data-id="KY"
         d="M527 449.1l-.1-.3-.1.1v.6h.7l.3-.2h.6l-.1-.2-.8-.1-.1.1-.2.1-.2-.1zm8-2.3h0l-.1-.1h-.1l-.3.1h-.2l-.1.1-.1.1h.2l.4-.2H535zm.8-.1l.5-.2h0l-.1-.1h-.1l-.1.1h-.1l-.5.3h.2l.2-.1z"
         fill={colors["Cayman Islands"]}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__DM"
         data-name="Dominica"
         data-id="DM"
@@ -1434,22 +1611,25 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__FK"
-        data-name="Falkland Is."
+        data-name="Falkland Islands"
         data-id="FK"
         d="M690.3 902.7l-.1-.3-.4-.2-.2-.1.1.2.1.3.1.2.2.1.2-.2zm5.5-1.3l-.1-.1h-.2l-.1.2.2.3.4.1-.2-.5zm-12.9-1.4l-.1.2-.4.1.2.3.6.4h.4l.1-.3-.1-.6h-.3l-.4-.1zm2.8-2l-.9-.3-.4-.3h-.3l.4.4.1.2.1.2.6.3.6.3.4.3-.1.1-.8.3h-.3l-.2.1.4.2.6-.1.2-.1h.2l.3.1v.2l-.1.2-.2.2-.4.3-.6.4h-.8l-.7.7.9.5.7.3h.9v-.1l.2-.1h.3l.1-.1.2-.4v-.6h.2l.3.1.7-.1.3-.1.6-.9.4-.8.2-.4.3-.2.1-.2.1-.3.3-.2v-.3l-.4-.2-.3-.2-.3.3-.2-.1-.9.3h-.4l-.3-.2-.4-.1-.4.1-.5.5-.8-.2zm.7-.4l.1-.3-.1-.2-.5-.2h-.5l.2.5.2.2h.6zm5.9-.7h-.4l.4.5-.8.8.2.6.3.4.1.2-.1.1-.4.1-.3.1-.2.3-.9.9.2.2-.3.7.2.3.8.7.8.4v-.7l.4-.1.4.2.4-.2-.9-1h.3l2.5.5-.1-.4-.1-.2-.3-.4 1.5-.4.5-.3.2-.3.6-.1.8-.3-.1-.1.1-.3-.4-.2-.5-.1.1-.3.5-.1-.8-.7-.3-.1-1 .1-.3.1v.2l.1.3.3.3.1.2-.2-.1-1.1-.4-.2-.1-.2-.4.2-.1.3.1.1-.3-.4-.3-.4-.1-.9.1-.8-.3z"
         fill={colors["Falkland Islands"]}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__FO"
-        data-name="Faeroe Is."
+        data-name="Faeroe Islands"
         data-id="FO"
         d="M947 186.9v-.3l-.1-.3v-.2h-.1l-.5-.1-.1-.2h-.1v.2l.1.4.5.4.3.2h.1l-.1-.1zm.5-2.1v-.1l-.2-.2-.5-.2-.2-.1-.2.1v.2l.1.1.4.1.4.3h.1l.1-.2zm-2.4-1.9l-.2-.1-.5.1h-.3l.1.3.6.2h.6l.2-.1-.1-.2-.4-.2zm2.5-.5l-.8-.2-.6-.3-1 .1.7 1.1.8.7.4.2V183.7l-.4-.5-.1-.1v-.1l.1-.1h.2l.3.2h.2l.2-.7zm1-.2l-.3-.2-.4-.4v.9h.1l.3.1.3-.4z"
         fill={colors["Faeroe Islands"]}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__GD"
         data-name="Grenada"
         data-id="GD"
@@ -1458,6 +1638,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__HK"
         data-name="Hong Kong"
         data-id="HK"
@@ -1466,6 +1647,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__KN"
         data-name="St. Kitts and Nevis"
         data-id="KN"
@@ -1474,6 +1656,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__LC"
         data-name="Saint Lucia"
         data-id="LC"
@@ -1482,6 +1665,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__LI"
         data-name="Liechtenstein"
         data-id="LI"
@@ -1490,6 +1674,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__MV"
         data-name="Maldives"
         data-id="MV"
@@ -1498,6 +1683,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__MT"
         data-name="Malta"
         data-id="MT"
@@ -1506,6 +1692,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__MS"
         data-name="Montserrat"
         data-id="MS"
@@ -1514,6 +1701,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__MU"
         data-name="Mauritius"
         data-id="MU"
@@ -1522,6 +1710,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__NC"
         data-name="New Caledonia"
         data-id="NC"
@@ -1530,6 +1719,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__NR"
         data-name="Nauru"
         data-id="NR"
@@ -1538,14 +1728,16 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__PN"
-        data-name="Pitcairn Is."
+        data-name="Pitcairn Islands"
         data-id="PN"
         d="M274.2 727.4v-.2l-.1-.2-.2-.1-.1.1.1.2.2.2.1.1v-.1z"
         fill={colors["Pitcairn Islands"]}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__PR"
         data-name="Puerto Rico"
         data-id="PR"
@@ -1554,14 +1746,16 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__PF"
-        data-name="Fr. Polynesia"
+        data-name="French Polynesia"
         data-id="PF"
         d="M213.2 704.9l-.1-.3-.2-.3-.1.1.1.1.2.3v.2l.1-.1zm9.3-14.7l-.2-.2-.4-.2-.2-.1-.2-.1-.1.1.1.1h.1l.3.2.3.1.2.1v.1l.1-.1zm-24.5-1.1l-.6-.3.1.2.4.2.2.1-.1-.2zm20.5-.2l-.4-.5h-.3l.7.6v-.1zm-21.6-1l-.4-.4-.2-.3-.3-.1.1.1.4.4.3.4.2.1-.1-.2zm-.3-2.1l-.1-.1h0v-.3l.2-.3.6-.4v-.1h0l-.2.1-.4.2-.2.2-.1.2-.1.3.1.2.1.1h.2l-.1-.1zm-47.4-1.1l-.2-.6-.3-.5-.8-.1-.5.2-.1.2.1.4.5.7.5.1.8-.1.4.6.2.1.4.1.1-.3-.2-.5-.9-.3zm-2.9-.9l.1-.4-.2-.1h-.5v.2l.1.2.1.1.3.2.1-.2zm-9.7-4.3h.2l-.4-.6-.3-.2V679.5l.3.1.2-.1zm43.9-1.6h-.6l.5.1.4.2-.3-.3zm-.7.1l-.3-.1-.3-.2h-.3l.7.3h.2zm-43.8.1l.1-.2-.1-.1-.4-.2.1.3v.2l.2.1.1-.1zm32.8-2l-.3-.4-.2-.3-.2-.4-.4-.5.1.3.1.2.2.2.2.4.1.2.3.4h.1v-.1zm16.2-1.5l.1-.5h-.2v.5h.1zm-14.4-1.6l-.6-.6h-.1l.1.2.5.5.1.2v-.3zm30.8-33.9l.1-.2v-.2l-.1-.1-.3-.1.1.7.2-.1zm-2.7-3.7l-.1-.2h-.2l-.1.1v.5l.4-.4zm.1-1.6l-.8.5.2.4.4.1.2-.2.8-.1.3-.4-.3.1-.8-.4zm-6.1-1.7l.2-.5-.2-.1-.4.2v.2l.3.4.1-.2zm2.6-3.1l.3-.1v-.1l-.2-.2-.3-.1-.1.1-.1.2.1.3.3-.1zm-2.9-.1l.1-.3v-.2l-.1-.2-.9-.2-.1.1v.4l.2.5h.3l.5-.1z"
         fill={colors["French Polynesia"]}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__SG"
         data-name="Singapore"
         data-id="SG"
@@ -1570,22 +1764,25 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__SB"
-        data-name="Solomon Is."
+        data-name="Solomon Islands"
         data-id="SB"
         d="M1909.1 646.4l-.2-.2-.1-.4h-.3l-.3.1.2.6h.2l.5-.1zm-35.6.8l-.1-.2-.5-.4-1.9-1.3-.4-.1-.1.1-.1.3.1.2.5.1v.1l.3.2.7.2.4.3.1.5.3.1.3.1.4-.2zm32-6.6v-.1l.2-.3-.2-.1-.5-.1-.7.1-.3.2-.2.3h-.2v.2l.1.4.2-.1.2.1.5-.5h.4l.5-.1zm-24.4-2.3l-.1-.2-.2-.1-.9-.7-.5-.2h-.5l-.1.5v.3h.6l.4.2v.6l.2.2v.5l1.2.9.7.4.7.1.4.2.5-.1.5.2.4-.1-.4-.3v-.4l-.5-1.3-.3-.3-.5.1-.5-.2h-.4l-.7-.3zm-.4-4.9l-.6-1.6-.2-.1.1.6.1.4-.1.5-.1.6.2.2.2-.2.4.5V633.4zm-9.8-2.2l-.3-.1-.4.3-.1.3-.1.7v.4l.3.7.3.5.3.3.2.2.9.1 1.7.1.9.4.9.2.4-.1.5-.2.1-.1-.1-.6-.2-.3-.4-.2-.2-.6-.5-.4-.9-.7h-1.6l-.6.1-1.1-1zm2.6-1.8l-.5.2v.3l.4.1.4.2.1.3h0l.2-.1.4.2.2-.3-.4-.5-.4-.3h-.1l-.3-.1zm-5.6.8l.3-.2v-.4h-.3l-.1-.2h-.2l-.3.2-.2.3.1.2h.4l.2.1h.1zm-8.4-2.3l-.1-.2-.3-.2h-.2l-.5.1.1.1.6.3.3.1.1-.2zm3.1.4l.3-.2-.1-.2-.1-.5-.4.7.1.2h.2zm-.5-.9v-.4l-.2-.1.4-.3-.1-.1-.6-.2-.2.2-.2.1-.1.1-.1.1-.1.5.2.4.4.2.6-.5zm-4 .2l-.3-.4.1-.5.2-.1.2-.5-.1-.4-.2.1-.7.6-.1.3.6.8.3.2v-.1zm13-1.3l-.2-.4v-.2l-.3-.2-.2.1-.1.3.1.2.4.3.3-.1zm6-1.2h-.2l-.1.1h-.5l-.1.2.6 1.1-.3.5.4 2.2.4 1.2.8.8v.2l.8.5.6 1.3.2.1.1-.2v-.6l-.5-1.1.1-.8-.2-.3v-.3l-.2-.8-.6-.7-.3-.1-.2-.3.2-.6.2-.2.1-.3-1.3-1.9zm-16.6-.5l-.6-.2-.2-.3v-1l-.6-.3-.3.2-.6.7-.2.4-.5.3-.1.3v.4l.4.1.3-.4.9-.1.3.1v.4l.1.7.3.3.5.2.4.6.1-.3h.2l.2-.4-.3-1.2-.3-.5zm-6.5-.4l.1-.5-.1-.9-.2.1v.2l-.1.4.2.8.1-.1zm3.2-.4l.2-.2v-.9l-.2-.4-.2-.2-.5.1-.4.5v.5l.4.6h.7zm-2.6-1.2l.2-.3.5-.7.1-.3-.5-.2-.4-.5-.4-.2-.3.4v.4l.5.6-.1.4.2.1.1.4.1-.1zm17.5 3.9l-.1-.5-.3-.4.4-.5-2.2-1.9-.3-.2-.4-.1-.5-.4-.5-.1-.5-.4-.2-.3-.6-.4-.6-.8-1.5-.3.1.2.4.4.1.7.5.4.5.6.2.1.2.2.4.5.8.4.8.6.3.1.3.3 1.5.7.5.7.7.5v-.1zm-21.8-9.2l.2-.3-.7-.5-.2.3-.2.5.4.2.5-.2zm9.1 1.5l-.1-.1h-.3l-.4-.2-.7-.8-.2-.3-.2-1-.4-.4-1.4-.8-.8-.8-.7-.2-.2.2v.5l.2.3 1 .9 1.1 1.7 1 1 .8.1h.4v.1l.1.2.5.2.5-.4-.2-.2z"
         fill={colors["Solomon Islands"]}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__ST"
-        data-name="S\xE3o Tom\xE9 and Principe"
+        data-name="São Tomé and Príncipe"
         data-id="ST"
         d="M1014.1 571.4l.5-.8v-.5l-.3-.5h-.4l-.5.4-.3.4v.3l.1.7.1.3.3.2.5-.5zm4.3-9.2l.2-.4v-.2l-.1-.1-.1-.1-.2.1-.3.5.1.2.2.2.2-.2z"
         fill={colors["São Tomé and Príncipe"]}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__SX"
         data-name="Sint Maarten"
         data-id="SX"
@@ -1594,6 +1791,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__SC"
         data-name="Seychelles"
         data-id="SC"
@@ -1602,14 +1800,16 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__TC"
-        data-name="Turks and Caicos Is."
+        data-name="Turks and Caicos Islands"
         data-id="TC"
         d="M578.7 433.1l-.1.4v.2l.2.1.6-.1.1-.1.2-.1v-.1l-.4.1-.6-.4zm3.6.6l.2-.2-.2-.2-.7-.2-.2.1v.3h.6l.3.3v-.1zm-1.1-.5l-.1-.1-.1-.6h-.5v.2l.1.2h.1l.1.2.3.2.1-.1z"
         fill={colors["Turks and Caicos Islands"]}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__TO"
         data-name="Tonga"
         data-id="TO"
@@ -1618,6 +1818,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__TT"
         data-name="Trinidad and Tobago"
         data-id="TT"
@@ -1626,30 +1827,34 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__VC"
-        data-name="St. Vin. and Gren."
+        data-name="St. Vincent Grenadines"
         data-id="VC"
         d="M634.5 491.4h0v-.1h.1v-.1h0v-.1h-.1v.1h0v.1h-.1v.1h.1zm.7-1.9l.1-.2.1-.1h0l-.1-.1h0v.1l-.2.1h0v.1h0v.1h-.2.1l.1.1h0l.1-.1zm.3-1.1l.3-.2.1-.6-.1-.4h-.2l-.3.1-.2.3-.1.5.4.4.1-.1z"
         fill={colors["St. Vincent Grenadines"]}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__VG"
-        data-name="British Virgin Is."
+        data-name="British Virgin Islands"
         data-id="VG"
         d="M619.2 455.1l.3-.2-.2-.1h-.4l-.3.2.1.1h.5zm1.1-.4l.4-.4-.5.1-.2.2.1.1h.2zm.8-1.8h-.7 0l.1.1h.3l.3.1h0v-.2z"
         fill={colors["British Virgin Islands"]}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__VI"
-        data-name="U.S. Virgin Is."
+        data-name="U.S. Virgin Islands"
         data-id="VI"
         d="M617.9 458.9l-.7.2-.1.4h1.1l.7-.3h-.6l-.4-.3zm.9-3.5l-.5-.1-.2.2h0l.3.1.4-.2zm-1.1.1l-.2-.2-.3-.1-.4.1.5.3.4-.1z"
         fill={colors["U.S. Virgin Islands"]}
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__CY"
         data-name="Cyprus"
         data-id="CY"
@@ -1658,6 +1863,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__RE"
         data-name="Reunion"
         data-id="RE"
@@ -1666,6 +1872,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__YT"
         data-name="Mayotte"
         data-id="YT"
@@ -1674,6 +1881,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__MQ"
         data-name="Martinique"
         data-id="MQ"
@@ -1682,6 +1890,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__GP"
         data-name="Guadeloupe"
         data-id="GP"
@@ -1690,6 +1899,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__CW"
         data-name="Curaco"
         data-id="CW"
@@ -1698,6 +1908,7 @@ const EarthSVG = ({ colors }) => {
         fillRule="evenodd"
       />
       <path
+        onClick={handleClick}
         id="prefix__IC"
         data-name="Canary Islands"
         data-id="IC"

@@ -2,7 +2,7 @@ import React from "react"
 import calculateColor from "../helpers/calculateColor"
 import EarthSVG from "./EarthSVG"
 
-function SVGManager({ currentCountry, countries, ...props }) {
+function SVGManager({ currentCountry, countries, handleClick }) {
   const [colors, setColors] = React.useState({})
 
   React.useEffect(() => {
@@ -26,7 +26,7 @@ function SVGManager({ currentCountry, countries, ...props }) {
     }
   }, [currentCountry, countries])
 
-  return <EarthSVG colors={colors} />
+  return <EarthSVG colors={colors} handleClick={handleClick} />
 }
 
 export default SVGManager
