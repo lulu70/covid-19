@@ -1,46 +1,26 @@
-import * as React from "react"
+import React from "react"
 import calculateColor from "../helpers/calculateColor"
 
 function SvgComponent({ currentCountry, countries, ...props }) {
-  const [colors, setColors] = React.useState({})
+  const initialColors = countries.reduce((pre, country) => {
+    return { ...pre, [country.country]: "white" }
+  }, {})
+  const [colors, setColors] = React.useState(initialColors)
 
   React.useEffect(() => {
-    // const colors = countries.map(country => ({
-    //   [country.country]: calculateColor(country),
-    // }))
-    const colors = countries.reduce((pre, country) => {
-      return { ...pre, [country.country]: calculateColor(country), x: "grey" }
-    }, {})
-    setColors(colors)
-  }, [countries])
-  console.log(colors)
-  // Paint all the countries
+    if (currentCountry.country === "Global") {
+      const colors = countries.reduce((pre, country) => {
+        return { ...pre, [country.country]: calculateColor(country) }
+      }, {})
+      setColors(colors)
+    } else {
+      setColors({
+        ...initialColors,
+        [currentCountry.country]: currentCountry.color,
+      })
+    }
+  }, [initialColors, countries, currentCountry])
 
-  // React.useEffect(() => {
-  //   countries.forEach(country => {
-  //     const color = calculateColor(country)
-  //     const paths = Array.from(document.querySelectorAll("path"))
-  //     const path = paths.find(path => {
-  //       const name = path.getAttribute("data-name")
-  //       return name === country.country
-  //     })
-  //     console.log(color)
-  //     path && path.setAttribute("fill", color)
-  //   })
-  // }, [countries])
-
-  //paint each country:
-
-  // React.useEffect(() => {
-  //   const color = calculateColor(currentCountry)
-  //   const paths = Array.from(document.querySelectorAll("path"))
-  //   setPath(paths[0])
-  //   const path = paths.find(path => {
-  //     const name = path.getAttribute("data-name")
-  //     return name === currentCountry.country
-  //   })
-  //   path && path.setAttribute("fill", color)
-  // }, [currentCountry])
   return (
     <svg
       // height={200}
