@@ -40,7 +40,7 @@ const IndexPage = () => {
             data={data}
           />
           <SVG
-            style={{ flex: 5 }}
+            style={{ flex: 7 }}
             currentCountry={currentCountry}
             countries={data.countries}
           />

@@ -1,7 +1,6 @@
 import { scaleLinear } from "d3-scale"
 
 const calculateColor = data => {
-  console.log(data)
   const confirmed = data.cases
   const deaths = data.deaths
   const recovered = data.recovered
