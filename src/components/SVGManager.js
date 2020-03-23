@@ -4,33 +4,41 @@ import calculatePercentage from "../helpers/calculatePercentage"
 import EarthSVG from "./EarthSVG"
 
 function SVGManager({ currentCountry, countries, handleClick }) {
-  const [colors, setColors] = React.useState({})
+  const [pathsProps, setPathsProps] = React.useState({})
 
+  //calculating props for all paths
   React.useEffect(() => {
-    const initialColors = countries.reduce((pre, country) => {
-      return { ...pre, [country.country]: "white" }
+    const initialPathsProps = countries.reduce((pre, country) => {
+      return {
+        ...pre,
+        [country.country]: {
+          fill: "white",
+        },
+      }
     }, {})
     if (currentCountry.country === "Global") {
-      const colors = countries.reduce(
+      const props = countries.reduce(
         (pre, country) => ({
           ...pre,
-          [country.country]: calculateColor(country),
+          [country.country]: {
+            fill: calculateColor(country),
+          },
         }),
         {}
       )
-      setColors(colors)
+      setPathsProps(props)
     } else {
-      setColors(() => ({
-        ...initialColors,
-        [currentCountry.country]: calculateColor(currentCountry),
+      setPathsProps(() => ({
+        ...initialPathsProps,
+        [currentCountry.country]: { fill: calculateColor(currentCountry) },
       }))
     }
-  }, [currentCountry, countries])
+  }, [countries, currentCountry])
 
   const percentage = calculatePercentage(currentCountry)
   return (
     <EarthSVG
-      colors={colors}
+      pathsProps={pathsProps}
       handleClick={handleClick}
       percentage={percentage}
     />
