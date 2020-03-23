@@ -19,25 +19,35 @@ const Stats = ({ currentCountry, countryClicked, setCountryClicked }) => {
             width: "100%",
             height: "100%",
             display: "flex",
-            justifyContent: "space-around",
             alignItems: "center",
+            // backgroundColor: "red",
           }}
         >
-          <StatsBox
-            index={1}
-            currentCountry={currentCountry}
-            setCountryClicked={setCountryClicked}
-          />
-          <StatsBox
-            index={2}
-            currentCountry={currentCountry}
-            setCountryClicked={setCountryClicked}
-          />
-          <StatsBox
-            index={3}
-            currentCountry={currentCountry}
-            setCountryClicked={setCountryClicked}
-          />
+          <div
+            style={{
+              backgroundColor: "black",
+              flex: 1,
+              display: "flex",
+              justifyContent: "space-around",
+              padding: "0.2rem",
+            }}
+          >
+            <StatsBox
+              index={1}
+              currentCountry={currentCountry}
+              setCountryClicked={setCountryClicked}
+            />
+            <StatsBox
+              index={2}
+              currentCountry={currentCountry}
+              setCountryClicked={setCountryClicked}
+            />
+            <StatsBox
+              index={3}
+              currentCountry={currentCountry}
+              setCountryClicked={setCountryClicked}
+            />
+          </div>
         </animated.div>
       )
   )

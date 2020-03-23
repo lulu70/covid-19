@@ -17,39 +17,40 @@ const StatsBox = ({ index, currentCountry, setCountryClicked }) => {
     recoveredPercentage,
     liveConfirmedPercentage,
   } = calculatePercentage(currentCountry)
-
+  const lineHeight = "0.7rem"
+  const liBasicStyle = {
+    margin: 0,
+    lineHeight,
+  }
   return (
     <div
       style={{
         backgroundColor: "black",
         color: "white",
         width: "20%",
-        padding: "1rem",
-        borderRadius: "15%",
       }}
     >
-      <h3
+      <h4
         style={{
           fontWeight: "normal",
-          textAlign: "center",
-          marginBottom: "0.5rem",
+          marginBottom: lineHeight,
         }}
       >
         {currentCountry.country}
-      </h3>
-      <ul style={{ listStyleType: "none", margin: 0, fontSize: "0.8rem" }}>
-        <li style={{ color: "red" }}>
+      </h4>
+      <ul style={{ listStyleType: "none", margin: 0, fontSize: lineHeight }}>
+        <li style={{ ...liBasicStyle, color: "red" }}>
           Confirmed and alive:{" "}
           {currentCountry.cases -
             currentCountry.recovered -
             currentCountry.deaths}
         </li>
         <Bar color="red" width={liveConfirmedPercentage} />
-        <li style={{ color: "#4badff" }}>
+        <li style={{ ...liBasicStyle, color: "#4badff" }}>
           Recovered: {currentCountry.recovered}
         </li>
         <Bar color="blue" width={recoveredPercentage} />
-        <li>Deaths: {currentCountry.deaths}</li>
+        <li style={{ ...liBasicStyle }}>Deaths: {currentCountry.deaths}</li>
         <Bar color="white" width={deathPercentage} />
       </ul>
     </div>
