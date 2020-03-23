@@ -57,7 +57,6 @@ const IndexPage = () => {
             countryClicked={countryClicked}
             setCountryClicked={setCountryClicked}
           />
-
           <SVGManager
             currentCountry={currentCountry}
             countries={data.countries}
