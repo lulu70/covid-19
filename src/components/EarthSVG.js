@@ -3,7 +3,7 @@ import React from "react"
 const EarthSVG = ({ pathsProps, handleClick, percentage }) => {
   return (
     <svg
-      style={{ flex: 7 }}
+      style={{ flex: 1, backgroundColor: "lightblue" }}
       // height={200}
       viewBox="0 0 2000 1001"
       width={400}

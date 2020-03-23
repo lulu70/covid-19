@@ -2,10 +2,10 @@ import React from "react"
 import useFetchCountries from "../hooks/useFetchCountries"
 import SEO from "../components/seo"
 import Loader from "react-loader"
-import Selector from "../components/Selector"
 import SVGManager from "../components/SVGManager"
 import calculateColor from "../helpers/calculateColor"
 import "../components/layout.css"
+import Stats from "../components/Stats"
 
 const IndexPage = () => {
   const { data, loading, error } = useFetchCountries()
@@ -47,13 +47,14 @@ const IndexPage = () => {
       )}
       {loading && <Loader color="white" />}
       {!loading && !error && (
-        <div style={{ display: "flex", color: "white" }}>
-          <Selector
-            currentCountry={currentCountry}
-            calculateColor={calculateColor}
-            setCurrentCountry={setCurrentCountry}
-            data={data}
-          />
+        <div style={{ display: "flex", position: "relative", color: "white" }}>
+          {currentCountry.country !== "Global" && (
+            <Stats
+              data={data}
+              currentCountry={currentCountry}
+              setCurrentCountry={setCurrentCountry}
+            />
+          )}
           <SVGManager
             currentCountry={currentCountry}
             countries={data.countries}
