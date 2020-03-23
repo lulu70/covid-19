@@ -1,11 +1,11 @@
 import React from "react"
-import { animated, useSpring } from "react-spring"
+import { animated, useSpring, config } from "react-spring"
 
 const Bar = ({ color, width }) => {
   const spring = useSpring({
     width,
     from: { width: "0%" },
-    config: { duration: 700 },
+    config: config.molasses,
   })
   return (
     <svg width="100%" height="20px" style={{ border: "solid white 1px" }}>

@@ -1,6 +1,7 @@
 import React from "react"
 import calculateColor from "../helpers/calculateColor"
 import EarthSVG from "./EarthSVG"
+import { useSpring, animated, config } from "react-spring"
 
 function SVGManager({
   currentCountry,
@@ -8,10 +9,19 @@ function SVGManager({
   handleClick,
   countryClicked,
 }) {
-  const backgroundColor = "lightblue"
+  const backgroundColor = "black"
   const countriesInitialColor = "white"
   const [pathsProps, setPathsProps] = React.useState({})
 
+  const springProps = countries.reduce((pre, country) => {
+    return {
+      ...pre,
+      [country.country]: countryClicked ? 0 : 1,
+      [currentCountry.country]: 1,
+      stroke: countryClicked ? "white" : "black",
+    }
+  }, {})
+  const spring = useSpring(springProps)
   //calculating props for all paths
   React.useEffect(() => {
     const initialPathsProps = countries.reduce((pre, country) => {
@@ -23,15 +33,6 @@ function SVGManager({
       }
     }, {})
     if (!countryClicked) {
-      // const props = countries.reduce(
-      //   (pre, country) => ({
-      //     ...pre,
-      //     [country.country]: {
-      //       fill: calculateColor(country),
-      //     },
-      //   }),
-      //   {}
-      // )
       setPathsProps(initialPathsProps)
     } else {
       setPathsProps(() => ({
@@ -48,6 +49,8 @@ function SVGManager({
       backgroundColor={backgroundColor}
       pathsProps={pathsProps}
       handleClick={handleClick}
+      spring={spring}
+      animated={animated}
     />
   )
 }
