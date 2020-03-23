@@ -1,9 +1,9 @@
 import React from "react"
 
-const EarthSVG = ({ pathsProps, handleClick, percentage }) => {
+const EarthSVG = ({ pathsProps, handleClick, percentage, backgroundColor }) => {
   return (
     <svg
-      style={{ flex: 1, backgroundColor: "lightblue" }}
+      style={{ flex: 1, backgroundColor }}
       // height={200}
       viewBox="0 0 2000 1001"
       width={400}

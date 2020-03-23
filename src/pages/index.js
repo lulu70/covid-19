@@ -10,6 +10,7 @@ import Stats from "../components/Stats"
 const IndexPage = () => {
   const { data, loading, error } = useFetchCountries()
   const [currentCountry, setCurrentCountry] = React.useState("")
+  const [countryClicked, setCountryClicked] = React.useState(false)
 
   // set initial state after data received to global
   React.useEffect(() => {
@@ -26,6 +27,7 @@ const IndexPage = () => {
   //click handler
   const handleClick = e => {
     const name = e.target.getAttribute("data-name")
+    setCountryClicked(true)
     const selectedCountry = data.countries.find(
       ({ country }) => country === name
     )
@@ -48,13 +50,14 @@ const IndexPage = () => {
       {loading && <Loader color="white" />}
       {!loading && !error && (
         <div style={{ display: "flex", position: "relative", color: "white" }}>
-          {currentCountry.country !== "Global" && (
-            <Stats
-              data={data}
-              currentCountry={currentCountry}
-              setCurrentCountry={setCurrentCountry}
-            />
-          )}
+          <Stats
+            data={data}
+            currentCountry={currentCountry}
+            setCurrentCountry={setCurrentCountry}
+            countryClicked={countryClicked}
+            setCountryClicked={setCountryClicked}
+          />
+
           <SVGManager
             currentCountry={currentCountry}
             countries={data.countries}

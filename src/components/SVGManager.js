@@ -4,6 +4,7 @@ import calculatePercentage from "../helpers/calculatePercentage"
 import EarthSVG from "./EarthSVG"
 
 function SVGManager({ currentCountry, countries, handleClick }) {
+  const backgroundColor = "lightblue"
   const [pathsProps, setPathsProps] = React.useState({})
 
   //calculating props for all paths
@@ -12,7 +13,7 @@ function SVGManager({ currentCountry, countries, handleClick }) {
       return {
         ...pre,
         [country.country]: {
-          fill: "white",
+          fill: backgroundColor,
         },
       }
     }, {})
@@ -30,7 +31,9 @@ function SVGManager({ currentCountry, countries, handleClick }) {
     } else {
       setPathsProps(() => ({
         ...initialPathsProps,
-        [currentCountry.country]: { fill: calculateColor(currentCountry) },
+        [currentCountry.country]: {
+          fill: calculateColor(currentCountry),
+        },
       }))
     }
   }, [countries, currentCountry])
@@ -38,6 +41,7 @@ function SVGManager({ currentCountry, countries, handleClick }) {
   const percentage = calculatePercentage(currentCountry)
   return (
     <EarthSVG
+      backgroundColor={backgroundColor}
       pathsProps={pathsProps}
       handleClick={handleClick}
       percentage={percentage}
