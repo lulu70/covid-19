@@ -11,6 +11,7 @@ const IndexPage = () => {
   const { data, loading, error } = useFetchCountries()
   const [currentCountry, setCurrentCountry] = React.useState("")
 
+  // set initial state after data received to global
   React.useEffect(() => {
     if (!error && !loading) {
       const color = calculateColor(data.all)
@@ -21,6 +22,8 @@ const IndexPage = () => {
       })
     }
   }, [error, loading, data])
+
+  //click handler
   const handleClick = e => {
     const name = e.target.getAttribute("data-name")
     const selectedCountry = data.countries.find(
@@ -32,6 +35,7 @@ const IndexPage = () => {
       ...selectedCountry,
     })
   }
+
   return (
     <div>
       <SEO />

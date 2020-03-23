@@ -6,7 +6,7 @@ const calculatePercentage = data => {
   const recovered = data.recovered
   const scale = scaleLinear([0, confirmed], ["0%", "100%"])
   const deathPercentage = scale(deaths)
-  const recoveredPercentage = scale(recovered + deaths)
+  const recoveredPercentage = scale(recovered)
   const liveConfirmedPercentage = scale(confirmed - deaths - recovered)
   return { deathPercentage, recoveredPercentage, liveConfirmedPercentage }
 }

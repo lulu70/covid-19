@@ -11,18 +11,18 @@ function SVGManager({ currentCountry, countries, handleClick }) {
       return { ...pre, [country.country]: "white" }
     }, {})
     if (currentCountry.country === "Global") {
-      // const colors = countries.reduce(
-      //   (pre, country) => ({
-      //     ...pre,
-      //     [country.country]: calculateColor(country),
-      //   }),
-      //   {}
-      // )
-      setColors(initialColors)
+      const colors = countries.reduce(
+        (pre, country) => ({
+          ...pre,
+          [country.country]: calculateColor(country),
+        }),
+        {}
+      )
+      setColors(colors)
     } else {
       setColors(() => ({
         ...initialColors,
-        [currentCountry.country]: "url(#gradient)",
+        [currentCountry.country]: calculateColor(currentCountry),
       }))
     }
   }, [currentCountry, countries])
