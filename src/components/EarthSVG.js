@@ -1,6 +1,6 @@
 import React from "react"
 
-const EarthSVG = ({ pathsProps, handleClick, percentage, backgroundColor }) => {
+const EarthSVG = ({ pathsProps, handleClick, backgroundColor }) => {
   return (
     <svg
       style={{ flex: 1, backgroundColor }}
@@ -16,26 +16,6 @@ const EarthSVG = ({ pathsProps, handleClick, percentage, backgroundColor }) => {
         <style type="text/css" id="style6">
           {"path{fill-rule:evenodd}"}
         </style>
-        <linearGradient id="gradient" gradientTransform="rotate(0)">
-          <stop offset="0%" stopColor="black"></stop>
-          <stop
-            offset={percentage ? percentage.deathPercentage : "0%"}
-            stopColor="black"
-          ></stop>
-          <stop
-            offset={percentage ? percentage.deathPercentage : "0%"}
-            stopColor="blue"
-          ></stop>
-          <stop
-            offset={percentage ? percentage.recoveredPercentage : "0%"}
-            stopColor="blue"
-          ></stop>
-          <stop
-            offset={percentage ? percentage.recoveredPercentage : "0%"}
-            stopColor="red"
-          ></stop>
-          <stop offset="100%" stopColor="red"></stop>
-        </linearGradient>
       </defs>
       <path
         onClick={handleClick}
