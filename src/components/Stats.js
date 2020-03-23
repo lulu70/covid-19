@@ -16,11 +16,13 @@ const Stats = ({
     leave: { opacity: 0 },
     onDestroyed: () => {
       if (!countryClicked)
-        setCurrentCountry({
-          color: calculateColor(data.all),
-          country: "Global",
-          ...data.all,
-        })
+        setTimeout(() => {
+          setCurrentCountry({
+            color: calculateColor(data.all),
+            country: "Global",
+            ...data.all,
+          })
+        }, [200])
     },
   })
 

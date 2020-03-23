@@ -18,16 +18,16 @@ function SVGManager({ currentCountry, countries, handleClick }) {
       }
     }, {})
     if (currentCountry.country === "Global") {
-      const props = countries.reduce(
-        (pre, country) => ({
-          ...pre,
-          [country.country]: {
-            fill: calculateColor(country),
-          },
-        }),
-        {}
-      )
-      setPathsProps(props)
+      // const props = countries.reduce(
+      //   (pre, country) => ({
+      //     ...pre,
+      //     [country.country]: {
+      //       fill: calculateColor(country),
+      //     },
+      //   }),
+      //   {}
+      // )
+      setPathsProps(initialPathsProps)
     } else {
       setPathsProps(() => ({
         ...initialPathsProps,

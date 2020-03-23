@@ -26,8 +26,8 @@ const IndexPage = () => {
 
   //click handler
   const handleClick = e => {
-    const name = e.target.getAttribute("data-name")
     setCountryClicked(true)
+    const name = e.target.getAttribute("data-name")
     const selectedCountry = data.countries.find(
       ({ country }) => country === name
     )
