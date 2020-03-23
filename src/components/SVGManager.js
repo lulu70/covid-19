@@ -1,7 +1,7 @@
 import React from "react"
 import calculateColor from "../helpers/calculateColor"
 import EarthSVG from "./EarthSVG"
-import { useSpring, animated, config } from "react-spring"
+import { useSpring, animated } from "react-spring"
 
 function SVGManager({
   currentCountry,
