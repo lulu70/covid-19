@@ -2,7 +2,12 @@ import React from "react"
 import calculateColor from "../helpers/calculateColor"
 import EarthSVG from "./EarthSVG"
 
-function SVGManager({ currentCountry, countries, handleClick }) {
+function SVGManager({
+  currentCountry,
+  countries,
+  handleClick,
+  countryClicked,
+}) {
   const backgroundColor = "lightblue"
   const countriesInitialColor = "white"
   const [pathsProps, setPathsProps] = React.useState({})
@@ -17,7 +22,7 @@ function SVGManager({ currentCountry, countries, handleClick }) {
         },
       }
     }, {})
-    if (currentCountry.country === "Global") {
+    if (!countryClicked) {
       // const props = countries.reduce(
       //   (pre, country) => ({
       //     ...pre,
@@ -36,7 +41,7 @@ function SVGManager({ currentCountry, countries, handleClick }) {
         },
       }))
     }
-  }, [countries, currentCountry])
+  }, [countries, currentCountry, countryClicked])
 
   return (
     <EarthSVG

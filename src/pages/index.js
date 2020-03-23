@@ -13,16 +13,16 @@ const IndexPage = () => {
   const [countryClicked, setCountryClicked] = React.useState(false)
 
   // set initial state after data received to global
-  React.useEffect(() => {
-    if (!error && !loading) {
-      const color = calculateColor(data.all)
-      setCurrentCountry({
-        color,
-        country: "Global",
-        ...data.all,
-      })
-    }
-  }, [error, loading, data])
+  // React.useEffect(() => {
+  //   if (!error && !loading) {
+  //     const color = calculateColor(data.all)
+  //     setCurrentCountry({
+  //       color,
+  //       country: "Global",
+  //       ...data.all,
+  //     })
+  //   }
+  // }, [error, loading, data])
 
   //click handler
   const handleClick = e => {
@@ -61,6 +61,7 @@ const IndexPage = () => {
             currentCountry={currentCountry}
             countries={data.countries}
             handleClick={handleClick}
+            countryClicked={countryClicked}
           />
         </div>
       )}
