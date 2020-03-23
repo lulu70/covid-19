@@ -4,7 +4,7 @@ const EarthSVG = ({ pathsProps, handleClick, backgroundColor }) => {
   return (
     <svg
       style={{ flex: 1, backgroundColor }}
-      // height={200}
+      height={"100%"}
       viewBox="0 0 2000 1001"
       width={400}
       id="prefix__svg2"
