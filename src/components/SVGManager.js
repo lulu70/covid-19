@@ -2,18 +2,19 @@ import React from "react"
 import calculateColor from "../helpers/calculateColor"
 import EarthSVG from "./EarthSVG"
 import { useSpring, animated, config } from "react-spring"
+import useStateContext from "../hooks/useStateContext"
+import useDispatchContext from "../hooks/useDispatchContext"
 
-function SVGManager({
-  currentCountry,
-  countries,
-  handleClick,
-  countryClicked,
-}) {
+function SVGManager() {
   const backgroundColor = "black"
   const countriesInitialColor = "lightgray"
+  const { countryClicked, currentCountry, data } = useStateContext()
   const [pathsProps, setPathsProps] = React.useState({})
-
-  const springProps = countries.reduce((pre, country) => {
+  const [
+    dispatch,
+    { setCountryClicked, setCurrentCountry },
+  ] = useDispatchContext()
+  const springProps = data.countries.reduce((pre, country) => {
     return {
       ...pre,
       [country.country]: countryClicked ? 0 : 1,
@@ -24,7 +25,7 @@ function SVGManager({
   const spring = useSpring({ ...springProps, config: config.molasses })
   //calculating props for all paths
   React.useEffect(() => {
-    const initialPathsProps = countries.reduce((pre, country) => {
+    const initialPathsProps = data.countries.reduce((pre, country) => {
       return {
         ...pre,
         [country.country]: {
@@ -42,15 +43,31 @@ function SVGManager({
         },
       }))
     }
-  }, [countries, currentCountry, countryClicked])
+  }, [data, currentCountry, countryClicked])
+
+  //click handler
+  const handleClick = e => {
+    dispatch(setCountryClicked(true))
+    const name = e.target.getAttribute("data-name")
+    const selectedCountry = data.countries.find(
+      ({ country }) => country === name
+    )
+    const color = calculateColor(selectedCountry)
+    dispatch(
+      setCurrentCountry({
+        color,
+        ...selectedCountry,
+      })
+    )
+  }
 
   return (
     <EarthSVG
       backgroundColor={backgroundColor}
       pathsProps={pathsProps}
-      handleClick={handleClick}
       spring={spring}
       animated={animated}
+      handleClick={handleClick}
     />
   )
 }

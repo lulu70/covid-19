@@ -1,8 +1,9 @@
 import React from "react"
 import { useTransition, animated } from "react-spring"
 import StatsBox from "./StatsBox"
-
-const Stats = ({ currentCountry, countryClicked, setCountryClicked }) => {
+import useStateContext from "../hooks/useStateContext"
+const Stats = () => {
+  const { countryClicked } = useStateContext()
   const transitions = useTransition(countryClicked, null, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
@@ -32,21 +33,9 @@ const Stats = ({ currentCountry, countryClicked, setCountryClicked }) => {
               padding: "0.2rem",
             }}
           >
-            <StatsBox
-              index={1}
-              currentCountry={currentCountry}
-              setCountryClicked={setCountryClicked}
-            />
-            <StatsBox
-              index={2}
-              currentCountry={currentCountry}
-              setCountryClicked={setCountryClicked}
-            />
-            <StatsBox
-              index={3}
-              currentCountry={currentCountry}
-              setCountryClicked={setCountryClicked}
-            />
+            <StatsBox index={1} />
+            <StatsBox index={2} />
+            <StatsBox index={3} />
           </div>
         </animated.div>
       )

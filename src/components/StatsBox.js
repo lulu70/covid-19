@@ -1,17 +1,21 @@
 import React from "react"
 import calculatePercentage from "../helpers/calculatePercentage"
 import Bar from "./Bar"
+import useDispatchContext from "../hooks/useDispatchContext"
+import useStateContext from "../hooks/useStateContext"
 
-const StatsBox = ({ index, currentCountry, setCountryClicked }) => {
+const StatsBox = ({ index }) => {
+  const [dispatch, { setCountryClicked }] = useDispatchContext()
+  const { currentCountry } = useStateContext()
   React.useEffect(() => {
     const handleClick = () => {
-      setCountryClicked(false)
+      dispatch(setCountryClicked(false))
     }
     if (index === 1) document.addEventListener("mousedown", handleClick)
     return () => {
       if (index === 1) document.removeEventListener("mousedown", handleClick)
     }
-  }, [index, setCountryClicked])
+  }, [index, dispatch, setCountryClicked])
   const {
     deathPercentage,
     recoveredPercentage,

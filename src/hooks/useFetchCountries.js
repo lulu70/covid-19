@@ -1,13 +1,17 @@
 import React from "react"
+import useDispatchContext from "./useDispatchContext"
 
 const useFetchCountries = () => {
-  const [data, setData] = React.useState(null)
-  const [loading, setLoading] = React.useState(true)
-  const [error, setError] = React.useState("")
+  const [dispatch, { setData }] = useDispatchContext()
 
   React.useEffect(() => {
     const getData = async () => {
       try {
+        dispatch(
+          setData({
+            dataStatus: "LOADING",
+          })
+        )
         const allResponse = await fetch(
           "https://coronavirus-19-api.herokuapp.com/all"
         )
@@ -21,20 +25,26 @@ const useFetchCountries = () => {
             allError: allJson.error,
             countriesError: countriesJson.error,
           })
-
-        setData({
-          all: allJson,
-          countries: countriesJson,
-        })
-        setLoading(false)
+        dispatch(
+          setData({
+            dataStatus: "SUCCESS",
+            data: {
+              all: allJson,
+              countries: countriesJson,
+            },
+          })
+        )
       } catch (err) {
-        setError(err)
-        setLoading(false)
+        dispatch(
+          setData({
+            dataStatus: "ERROR",
+            err,
+          })
+        )
       }
     }
     getData()
-  }, [])
-  return { data, loading, error }
+  }, [dispatch, setData])
 }
 
 export default useFetchCountries
