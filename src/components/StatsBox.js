@@ -19,7 +19,7 @@ const StatsBox = ({ index }) => {
   const {
     deathPercentage,
     recoveredPercentage,
-    liveConfirmedPercentage,
+    activePercentage,
   } = calculatePercentage(currentCountry)
   const lineHeight = "0.7rem"
   const liBasicStyle = {
@@ -44,12 +44,9 @@ const StatsBox = ({ index }) => {
       </h4>
       <ul style={{ listStyleType: "none", margin: 0, fontSize: lineHeight }}>
         <li style={{ ...liBasicStyle, color: "red" }}>
-          Confirmed and alive:{" "}
-          {currentCountry.cases -
-            currentCountry.recovered -
-            currentCountry.deaths}
+          Active: {currentCountry.active}
         </li>
-        <Bar color="red" width={liveConfirmedPercentage} />
+        <Bar color="red" width={activePercentage} />
         <li style={{ ...liBasicStyle, color: "#4badff" }}>
           Recovered: {currentCountry.recovered}
         </li>
