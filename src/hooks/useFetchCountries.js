@@ -12,11 +12,9 @@ const useFetchCountries = () => {
             dataStatus: "LOADING",
           })
         )
-        const allResponse = await fetch(
-          "https://coronavirus-19-api.herokuapp.com/all"
-        )
+        const allResponse = await fetch("https://corona.lmao.ninja/all")
         const countriesResponse = await fetch(
-          "https://coronavirus-19-api.herokuapp.com/countries"
+          "https://corona.lmao.ninja/countries"
         )
         const allJson = await allResponse.json()
         const countriesJson = await countriesResponse.json()
