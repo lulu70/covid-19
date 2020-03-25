@@ -47,7 +47,6 @@ function SVGManager() {
 
   //click handler
   const handleClick = e => {
-    dispatch(setCountryClicked(true))
     const name = e.target.getAttribute("data-name")
     const selectedCountry = data.countries.find(
       ({ country }) => country === name
@@ -59,6 +58,7 @@ function SVGManager() {
         ...selectedCountry,
       })
     )
+    dispatch(setCountryClicked(true))
   }
 
   return (

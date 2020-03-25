@@ -6,10 +6,13 @@ import SVGManager from "../components/SVGManager"
 import "../components/layout.css"
 import Stats from "../components/Stats"
 import useStateContext from "../hooks/useStateContext"
-
+import usePusher from "../hooks/usePusher"
 const IndexPage = () => {
   useFetchCountries()
+  usePusher()
+
   const { dataStatus, error } = useStateContext()
+
   return (
     <div>
       <SEO />
