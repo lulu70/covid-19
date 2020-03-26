@@ -1,6 +1,6 @@
 import React from "react"
 import useDispatchContext from "./useDispatchContext"
-
+import novelCovid from "novelcovid"
 const useFetchCountries = () => {
   const [dispatch, { setData }] = useDispatchContext()
 
@@ -12,23 +12,20 @@ const useFetchCountries = () => {
             dataStatus: "LOADING",
           })
         )
-        const allResponse = await fetch("https://corona.lmao.ninja/all")
-        const countriesResponse = await fetch(
-          "https://corona.lmao.ninja/countries"
-        )
-        const allJson = await allResponse.json()
-        const countriesJson = await countriesResponse.json()
-        if (allJson.error || countriesJson.error)
+        const all = await novelCovid.getAll()
+        const countries = await novelCovid.getCountry()
+
+        if (all.error || countries.error)
           throw new Error({
-            allError: allJson.error,
-            countriesError: countriesJson.error,
+            allError: all.error,
+            countriesError: countries.error,
           })
         dispatch(
           setData({
             dataStatus: "SUCCESS",
             data: {
-              all: allJson,
-              countries: countriesJson,
+              all,
+              countries,
             },
           })
         )

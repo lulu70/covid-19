@@ -27,13 +27,14 @@ const usePusher = () => {
     channel &&
       channel.bind("my-event", ({ message }) => {
         if (dataStatus !== "SUCCESS") return
-        if (message === "Close") {
+        if (message === "CLOSE") {
           dispatch(setCountryClicked(false))
           return
         }
         const selectedCountry = data.countries.find(
-          ({ country }) => country === message
+          ({ countryInfo }) => countryInfo.iso2 === message
         )
+        if (!selectedCountry) return
         const color = calculateColor(selectedCountry)
         dispatch(
           setCurrentCountry({

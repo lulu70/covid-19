@@ -15,10 +15,15 @@ function SVGManager() {
     { setCountryClicked, setCurrentCountry },
   ] = useDispatchContext()
   const springProps = data.countries.reduce((pre, country) => {
+    const iso2 = country.countryInfo.iso2
+    const currentIso =
+      currentCountry && currentCountry.countryInfo
+        ? currentCountry.countryInfo.iso2
+        : null
     return {
       ...pre,
-      [country.country]: countryClicked ? 0 : 1,
-      [currentCountry.country]: 1,
+      [iso2]: countryClicked ? 0 : 1,
+      [currentIso]: 1,
       stroke: countryClicked ? "white" : "black",
     }
   }, {})
@@ -28,7 +33,7 @@ function SVGManager() {
     const initialPathsProps = data.countries.reduce((pre, country) => {
       return {
         ...pre,
-        [country.country]: {
+        [country.countryInfo.iso2]: {
           fill: countriesInitialColor,
         },
       }
@@ -38,7 +43,7 @@ function SVGManager() {
     } else {
       setPathsProps(() => ({
         ...initialPathsProps,
-        [currentCountry.country]: {
+        [currentCountry.countryInfo.iso2]: {
           fill: calculateColor(currentCountry),
         },
       }))
@@ -47,9 +52,9 @@ function SVGManager() {
 
   //click handler
   const handleClick = e => {
-    const name = e.target.getAttribute("data-name")
+    const name = e.target.getAttribute("data-id")
     const selectedCountry = data.countries.find(
-      ({ country }) => country === name
+      ({ countryInfo }) => countryInfo.iso2 === name
     )
     const color = calculateColor(selectedCountry)
     dispatch(

@@ -6,10 +6,10 @@ import SVGManager from "../components/SVGManager"
 import "../components/layout.css"
 import Stats from "../components/Stats"
 import useStateContext from "../hooks/useStateContext"
-// import usePusher from "../hooks/usePusher"
+import usePusher from "../hooks/usePusher"
 const IndexPage = () => {
   useFetchCountries()
-  // usePusher()
+  usePusher()
 
   const { dataStatus, error } = useStateContext()
 
@@ -25,7 +25,10 @@ const IndexPage = () => {
             flexDirection: "column",
           }}
         >
-          <h1>An error loading the data try refreshing the page </h1>
+          <h1>
+            An error loading the data, <br />
+            Try refreshing the page{" "}
+          </h1>
           <p>{error && error.message && error.message}</p>
         </div>
       )}

@@ -26,6 +26,13 @@ const StatsBox = ({ index }) => {
     margin: 0,
     lineHeight,
   }
+  const normalizeName = word => {
+    if (word.includes(",")) {
+      const arr = word.split("")
+      const slicedArr = arr.slice(0, arr.indexOf(","))
+      return slicedArr.join("")
+    } else return word
+  }
   return (
     <div
       style={{
@@ -40,7 +47,7 @@ const StatsBox = ({ index }) => {
           marginBottom: lineHeight,
         }}
       >
-        {currentCountry.country}
+        {normalizeName(currentCountry.country)}
       </h4>
       <ul style={{ listStyleType: "none", margin: 0, fontSize: lineHeight }}>
         <li style={{ ...liBasicStyle, color: "red" }}>
