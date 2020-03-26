@@ -6,10 +6,10 @@ import SVGManager from "../components/SVGManager"
 import "../components/layout.css"
 import Stats from "../components/Stats"
 import useStateContext from "../hooks/useStateContext"
-import usePusher from "../hooks/usePusher"
+// import usePusher from "../hooks/usePusher"
 const IndexPage = () => {
   useFetchCountries()
-  usePusher()
+  // usePusher()
 
   const { dataStatus, error } = useStateContext()
 
@@ -17,10 +17,17 @@ const IndexPage = () => {
     <div>
       <SEO />
       {dataStatus === "ERROR" && (
-        <>
-          <h1>Error</h1>
-          <p>{error.message}</p>
-        </>
+        <div
+          style={{
+            color: "white",
+            display: "flex",
+            alignItems: "center",
+            flexDirection: "column",
+          }}
+        >
+          <h1>An error loading the data try refreshing the page </h1>
+          <p>{error && error.message && error.message}</p>
+        </div>
       )}
       {dataStatus === "LOADING" && <Loader color="white" />}
       {dataStatus === "SUCCESS" && (
