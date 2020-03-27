@@ -27,6 +27,11 @@ const useFetchCountries = () => {
               all,
               countries,
             },
+            currentCountry: {
+              ...all,
+              country: "Global",
+              active: all.cases - all.deaths - all.recovered,
+            },
           })
         )
       } catch (err) {

@@ -11,7 +11,7 @@ const Header = ({ siteTitle }) => (
         textDecoration: "none",
       }}
     >
-      <h1 style={{ margin: 0, textAlign: "center", color: "#00FF41" }}>
+      <h1 style={{ margin: 0, textAlign: "center", color: "white" }}>
         {siteTitle}
       </h1>
     </Link>

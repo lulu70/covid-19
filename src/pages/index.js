@@ -4,17 +4,16 @@ import SEO from "../components/seo"
 import Loader from "react-loader"
 import SVGManager from "../components/SVGManager"
 import "../components/layout.css"
-import Stats from "../components/Stats"
 import useStateContext from "../hooks/useStateContext"
-import usePusher from "../hooks/usePusher"
+import Layout from "../components/layout"
+import StatsBox from "../components/StatsBox"
 const IndexPage = () => {
   useFetchCountries()
-  usePusher()
 
   const { dataStatus, error } = useStateContext()
 
   return (
-    <div>
+    <Layout>
       <SEO />
       {dataStatus === "ERROR" && (
         <div
@@ -34,12 +33,19 @@ const IndexPage = () => {
       )}
       {dataStatus === "LOADING" && <Loader color="white" />}
       {dataStatus === "SUCCESS" && (
-        <div style={{ display: "flex", position: "relative", color: "white" }}>
-          <Stats />
+        <div
+          style={{
+            display: "flex",
+            position: "relative",
+            color: "white",
+            flex: 1,
+          }}
+        >
+          <StatsBox />
           <SVGManager />
         </div>
       )}
-    </div>
+    </Layout>
   )
 }
 

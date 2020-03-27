@@ -6,10 +6,12 @@ const EarthSVG = ({
   backgroundColor,
   spring,
   animated,
+  svgRef,
 }) => {
   return (
     <animated.svg
-      style={{ flex: 1, backgroundColor }}
+      ref={svgRef}
+      style={{ flex: 10, backgroundColor }}
       height={"100%"}
       viewBox="0 0 2000 1001"
       width={400}

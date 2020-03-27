@@ -6,7 +6,7 @@ import useStateContext from "../hooks/useStateContext"
 import useDispatchContext from "../hooks/useDispatchContext"
 
 function SVGManager() {
-  const backgroundColor = "black"
+  const backgroundColor = "grey"
   const countriesInitialColor = "lightgray"
   const { countryClicked, currentCountry, data } = useStateContext()
   const [pathsProps, setPathsProps] = React.useState({})
@@ -50,6 +50,28 @@ function SVGManager() {
     }
   }, [data, currentCountry, countryClicked])
 
+  //adds mouse click event
+  const svgRef = React.useRef()
+  React.useEffect(() => {
+    const ref = svgRef.current
+    const handleMouseDown = e => {
+      if (e.target.tagName !== "path") {
+        dispatch(setCountryClicked(false))
+        dispatch(
+          setCurrentCountry({
+            ...data.all,
+            country: "Global",
+            active: data.all.cases - data.all.deaths - data.all.recovered,
+          })
+        )
+      }
+    }
+    ref.addEventListener("mousedown", handleMouseDown)
+    return () => {
+      ref.removeEventListener("mousedown", handleMouseDown)
+    }
+  }, [dispatch, setCountryClicked, countryClicked, data, setCurrentCountry])
+
   //click handler
   const handleClick = e => {
     const name = e.target.getAttribute("data-id")
@@ -73,6 +95,7 @@ function SVGManager() {
       spring={spring}
       animated={animated}
       handleClick={handleClick}
+      svgRef={svgRef}
     />
   )
 }

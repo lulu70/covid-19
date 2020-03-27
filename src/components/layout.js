@@ -24,8 +24,12 @@ const Layout = ({ children }) => {
   `)
   return (
     <div
-      className="main_container"
-      style={{ display: "flex", flexDirection: "column" }}
+      className="layout__container"
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        height: "100vh",
+      }}
     >
       <Header siteTitle={data.site.siteMetadata.title} />
       <main style={{ display: "flex", flex: 1 }}>{children}</main>
