@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { useSpring, animated } from "react-spring"
 import Header from "./header"
+import useDispatchContext from "../hooks/useDispatchContext"
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -28,6 +29,10 @@ const Layout = ({ children }) => {
       opacity: 0,
     },
   })
+  const [dispatch, { setCountryClicked }] = useDispatchContext()
+  React.useEffect(() => {
+    dispatch(setCountryClicked(false))
+  }, [dispatch, setCountryClicked])
   return (
     <animated.div
       className="layout__container"
