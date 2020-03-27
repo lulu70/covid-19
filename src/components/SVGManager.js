@@ -35,6 +35,7 @@ function SVGManager() {
         ...pre,
         [country.countryInfo.iso2]: {
           fill: countriesInitialColor,
+          cursor: "pointer",
         },
       }
     }, {})

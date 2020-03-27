@@ -10,7 +10,7 @@ const StatsBox = () => {
     recoveredPercentage,
     activePercentage,
   } = calculatePercentage(currentCountry)
-  const lineHeight = "0.7rem"
+  const lineHeight = "1rem"
   const liBasicStyle = {
     margin: 0,
     lineHeight,
@@ -24,20 +24,21 @@ const StatsBox = () => {
   }
   return (
     <div
+      className="statsBox__container"
       style={{
         backgroundColor: "black",
         color: "white",
-        flex: 2,
+        flex: 3,
       }}
     >
-      <h4
+      <h3
         style={{
           fontWeight: "normal",
           marginBottom: lineHeight,
         }}
       >
         {normalizeName(currentCountry.country)}
-      </h4>
+      </h3>
       <ul style={{ listStyleType: "none", margin: 0, fontSize: lineHeight }}>
         <li style={{ ...liBasicStyle, color: "red" }}>
           Active: {currentCountry.active}

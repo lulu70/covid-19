@@ -8,13 +8,13 @@ import useStateContext from "../hooks/useStateContext"
 import Layout from "../components/layout"
 import StatsBox from "../components/StatsBox"
 import { Link } from "gatsby"
-
-const IndexPage = () => {
+const EarthModelPage = () => {
   useFetchCountries()
   const { dataStatus, error } = useStateContext()
+
   return (
     <Layout>
-      <SEO />
+      <SEO title="3d model|covid-19 state of recovery" />
       {dataStatus === "ERROR" && (
         <div
           style={{
@@ -45,8 +45,7 @@ const IndexPage = () => {
             <StatsBox />
             <SVGManager />
           </div>
-
-          <Link to="/3d-model">Check out a 3d model</Link>
+          <Link to="/">Check out an interactive map</Link>
           <p
             style={{
               color: "white",
@@ -57,8 +56,8 @@ const IndexPage = () => {
             This is a visual representation of the covid-19 (corona) virus
             epidemic state of recovery, globally and in each country separately.{" "}
             <br />
-            When a country on the map is pressed, its color is changing based on
-            the number of confirmed cases and recovery cases.
+            The color of the globe 3d model is changing based on the number of
+            confirmed cases and recovery cases.
             <br /> Confirmed cases are representing by the red color and
             recovered cases by the blue color.
           </p>
@@ -68,4 +67,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default EarthModelPage
