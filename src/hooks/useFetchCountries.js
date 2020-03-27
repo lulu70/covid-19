@@ -31,6 +31,9 @@ const useFetchCountries = () => {
               ...all,
               country: "Global",
               active: all.cases - all.deaths - all.recovered,
+              countryInfo: {
+                iso2: "global",
+              },
             },
           })
         )

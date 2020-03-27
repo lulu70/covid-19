@@ -2,12 +2,10 @@ import React from "react"
 import useFetchCountries from "../hooks/useFetchCountries"
 import SEO from "../components/seo"
 import Loader from "react-loader"
-import SVGManager from "../components/SVGManager"
-import "../components/layout.css"
 import useStateContext from "../hooks/useStateContext"
 import Layout from "../components/layout"
-import StatsBox from "../components/StatsBox"
 import { Link } from "gatsby"
+import Selector from "../components/Selector"
 const EarthModelPage = () => {
   useFetchCountries()
   const { dataStatus, error } = useStateContext()
@@ -42,8 +40,7 @@ const EarthModelPage = () => {
               flex: 1,
             }}
           >
-            <StatsBox />
-            <SVGManager />
+            <Selector />
           </div>
           <Link to="/">Check out an interactive map</Link>
           <p
