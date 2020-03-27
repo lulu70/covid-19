@@ -6,9 +6,10 @@ import useStateContext from "../hooks/useStateContext"
 import Layout from "../components/layout"
 import { Link } from "gatsby"
 import Selector from "../components/Selector"
+import EarthScene from "../components/EarthScene"
 const EarthModelPage = () => {
   useFetchCountries()
-  const { dataStatus, error } = useStateContext()
+  const { dataStatus, error, currentCountry } = useStateContext()
 
   return (
     <Layout>
@@ -31,7 +32,7 @@ const EarthModelPage = () => {
       )}
       {dataStatus === "LOADING" && <Loader color="white" />}
       {dataStatus === "SUCCESS" && (
-        <div style={{ flex: 1 }}>
+        <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
           <div
             className="index__innerContainer"
             style={{
@@ -41,6 +42,7 @@ const EarthModelPage = () => {
             }}
           >
             <Selector />
+            <EarthScene color={currentCountry.color} />
           </div>
           <Link to="/">Check out an interactive map</Link>
           <p

@@ -1,6 +1,8 @@
 import React from "react"
 import useDispatchContext from "./useDispatchContext"
 import novelCovid from "novelcovid"
+import calculateColor from "../helpers/calculateColor"
+
 const useFetchCountries = () => {
   const [dispatch, { setData }] = useDispatchContext()
 
@@ -20,6 +22,7 @@ const useFetchCountries = () => {
             allError: all.error,
             countriesError: countries.error,
           })
+        const color = calculateColor(all)
         dispatch(
           setData({
             dataStatus: "SUCCESS",
@@ -30,6 +33,7 @@ const useFetchCountries = () => {
             currentCountry: {
               ...all,
               country: "Global",
+              color,
               active: all.cases - all.deaths - all.recovered,
               countryInfo: {
                 iso2: "global",
