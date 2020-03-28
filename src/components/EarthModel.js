@@ -11,7 +11,7 @@ const EarthModel = () => {
     <primitive object={model.scene} />
   ) : (
     <Dom position={[-3, 2, 0]}>
-      <h1 style={{ color: "white" }}>Loading...</h1>
+      {/* <h1 style={{ color: "white" }}>Loading...</h1> */}
     </Dom>
   )
 }

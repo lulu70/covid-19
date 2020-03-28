@@ -6,7 +6,9 @@ import useStateContext from "../hooks/useStateContext"
 import useDispatchContext from "../hooks/useDispatchContext"
 
 function SVGManager() {
-  const backgroundColor = "#212121"
+  // const backgroundColor = "#212121"
+  const backgroundColor = "black"
+
   const countriesInitialColor = "lightgray"
   const { countryClicked, currentCountry, data } = useStateContext()
   const [pathsProps, setPathsProps] = React.useState({})

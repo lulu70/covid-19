@@ -40,13 +40,15 @@ const IndexPage = () => {
               display: "flex",
               color: "white",
               flex: 1,
+              marginBottom: "3rem",
             }}
           >
             <StatsBox />
             <SVGManager />
           </div>
-
-          <Link to="/3d-model">Check out a 3d model</Link>
+          <Link to="/3d-model" style={{ color: "#00ff41" }}>
+            3d model
+          </Link>
           <p
             style={{
               color: "white",

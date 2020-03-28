@@ -2,6 +2,7 @@ import React from "react"
 import calculatePercentage from "../helpers/calculatePercentage"
 import Bar from "./Bar"
 import useStateContext from "../hooks/useStateContext"
+import EarthScene from "./EarthScene"
 
 const StatsBox = () => {
   const { currentCountry } = useStateContext()
@@ -29,28 +30,43 @@ const StatsBox = () => {
         backgroundColor: "black",
         color: "white",
         flex: 3,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
       }}
     >
-      <h3
-        style={{
-          fontWeight: "normal",
-          marginBottom: lineHeight,
-        }}
-      >
-        {normalizeName(currentCountry.country)}
-      </h3>
-      <ul style={{ listStyleType: "none", margin: 0, fontSize: lineHeight }}>
-        <li style={{ ...liBasicStyle, color: "red" }}>
-          Active: {currentCountry.active}
-        </li>
-        <Bar color="red" width={activePercentage} />
-        <li style={{ ...liBasicStyle, color: "#4badff" }}>
-          Recovered: {currentCountry.recovered}
-        </li>
-        <Bar color="blue" width={recoveredPercentage} />
-        <li style={{ ...liBasicStyle }}>Deaths: {currentCountry.deaths}</li>
-        <Bar color="white" width={deathPercentage} />
-      </ul>
+      <div>
+        <EarthScene color={currentCountry.color} />
+      </div>
+      <div>
+        <h3
+          style={{
+            fontWeight: "normal",
+            marginBottom: lineHeight,
+          }}
+        >
+          {normalizeName(currentCountry.country)}
+        </h3>
+        <ul style={{ listStyleType: "none", margin: 0, fontSize: lineHeight }}>
+          <li style={{ ...liBasicStyle, color: "red" }}>
+            Active: {currentCountry.active}
+          </li>
+          <Bar color="red" width={activePercentage} />
+          <li
+            style={{
+              ...liBasicStyle,
+              color: "#4badff",
+            }}
+          >
+            Recovered: {currentCountry.recovered}
+          </li>
+          <Bar color="blue" width={recoveredPercentage} />
+          <li style={{ ...liBasicStyle, color: "grey" }}>
+            Deaths: {currentCountry.deaths}
+          </li>
+          <Bar color="grey" width={deathPercentage} />
+        </ul>
+      </div>
     </div>
   )
 }

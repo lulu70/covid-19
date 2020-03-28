@@ -8,7 +8,7 @@ const EarthScene = ({ color }) => {
     <Canvas camera={{ position: [0, 0, 12] }}>
       <EarthModel />
       <Controls />
-      <ambientLight intensity={2} />
+      <ambientLight intensity={4} />
       <spotLight
         position={[20, 20, 20]}
         color={color}

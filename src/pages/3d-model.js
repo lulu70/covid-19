@@ -44,7 +44,9 @@ const EarthModelPage = () => {
             <Selector />
             <EarthScene color={currentCountry.color} />
           </div>
-          <Link to="/">Check out an interactive map</Link>
+          <Link to="/" style={{ color: "#00ff41" }}>
+            Check out an interactive map
+          </Link>
           <p
             style={{
               color: "white",
