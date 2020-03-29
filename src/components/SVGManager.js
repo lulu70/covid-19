@@ -6,52 +6,27 @@ import useStateContext from "../hooks/useStateContext"
 import useDispatchContext from "../hooks/useDispatchContext"
 
 function SVGManager() {
-  // const backgroundColor = "#212121"
-  const backgroundColor = "black"
-
-  const countriesInitialColor = "lightgray"
   const { countryClicked, currentCountry, data } = useStateContext()
-  const [pathsProps, setPathsProps] = React.useState({})
   const [
     dispatch,
     { setCountryClicked, setCurrentCountry },
   ] = useDispatchContext()
-  const springProps = data.countries.reduce((pre, country) => {
-    const iso2 = country.countryInfo.iso2
-    const currentIso =
-      currentCountry && currentCountry.countryInfo
-        ? currentCountry.countryInfo.iso2
-        : null
-    return {
-      ...pre,
-      [iso2]: countryClicked ? 0 : 1,
-      [currentIso]: 1,
-      stroke: countryClicked ? "white" : "black",
-    }
-  }, {})
-  const spring = useSpring({ ...springProps, config: config.molasses })
-  //calculating props for all paths
-  React.useEffect(() => {
-    const initialPathsProps = data.countries.reduce((pre, country) => {
+
+  const springProps = data.countries.reduce(
+    (pre, country) => {
+      const iso2 = country.countryInfo.iso2
+      const currentIso =
+        currentCountry && currentCountry.countryInfo
+          ? currentCountry.countryInfo.iso2
+          : null
       return {
         ...pre,
-        [country.countryInfo.iso2]: {
-          fill: countriesInitialColor,
-          cursor: "pointer",
-        },
+        [iso2]: iso2 === currentIso ? 1 : 0,
       }
-    }, {})
-    if (!countryClicked) {
-      setPathsProps(initialPathsProps)
-    } else {
-      setPathsProps(() => ({
-        ...initialPathsProps,
-        [currentCountry.countryInfo.iso2]: {
-          fill: calculateColor(currentCountry),
-        },
-      }))
-    }
-  }, [data, currentCountry, countryClicked])
+    },
+    { config: config.molasses }
+  )
+  const spring = useSpring(springProps)
 
   //adds mouse click event
   const svgRef = React.useRef()
@@ -91,6 +66,18 @@ function SVGManager() {
     dispatch(setCountryClicked(true))
   }
 
+  const backgroundColor = "black"
+
+  const pathsProps = data.countries.reduce((pre, country) => {
+    return {
+      ...pre,
+      [country.countryInfo.iso2]: {
+        fill: calculateColor(country),
+        cursor: "pointer",
+        fillOpacity: spring[country.countryInfo.iso2],
+      },
+    }
+  }, {})
   return (
     <EarthSVG
       backgroundColor={backgroundColor}
