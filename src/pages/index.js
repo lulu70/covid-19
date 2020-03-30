@@ -1,7 +1,7 @@
 import React from "react"
 import useFetchCountries from "../hooks/useFetchCountries"
 import SEO from "../components/seo"
-import Loader from "react-loader"
+// import Loader from "react-loader"
 import SVGManager from "../components/SVGManager"
 import "../components/layout.css"
 import useStateContext from "../hooks/useStateContext"
@@ -31,7 +31,7 @@ const IndexPage = () => {
           <p>{error && error.message && error.message}</p>
         </div>
       )}
-      {dataStatus === "LOADING" && <Loader color="white" />}
+      {/* {dataStatus === "LOADING" && setTimeout(<Loader color="white" />, 2000)} */}
       {dataStatus === "SUCCESS" && (
         <div style={{ flex: 1 }}>
           <div

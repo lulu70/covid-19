@@ -1,6 +1,7 @@
 import React from "react"
 
 const EarthSVG = ({
+  svgProps,
   pathsProps,
   handleClick,
   backgroundColor,
@@ -11,7 +12,7 @@ const EarthSVG = ({
   return (
     <animated.svg
       ref={svgRef}
-      style={{ backgroundColor }}
+      style={{ backgroundColor, ...svgProps }}
       width={width}
       height={"100%"}
       viewBox="0 0 2000 1001"

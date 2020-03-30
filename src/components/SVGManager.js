@@ -25,7 +25,13 @@ function SVGManager() {
         [iso2]: iso2 === currentIso ? 1 : 0,
       }
     },
-    { config: config.molasses }
+    {
+      config: config.molasses,
+      from: {
+        opacity: 0,
+      },
+      opacity: 1,
+    }
   )
   const spring = useSpring(springProps)
 
@@ -88,7 +94,9 @@ function SVGManager() {
       },
     }
   }, {})
-
+  const svgProps = {
+    opacity: spring.opacity,
+  }
   return (
     <div
       className="svgManager__container"
@@ -104,6 +112,7 @@ function SVGManager() {
           <EarthSVG
             backgroundColor={backgroundColor}
             pathsProps={pathsProps}
+            svgProps={svgProps}
             animated={animated}
             handleClick={handleClick}
             svgRef={svgRef}

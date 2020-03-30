@@ -5,6 +5,13 @@ module.exports = {
     author: `Lior cohen`,
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-layout",
+      options: {
+        component: require.resolve(`./src/components/PagesWrapper.js`),
+      },
+    },
+
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

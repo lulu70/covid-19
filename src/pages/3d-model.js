@@ -1,7 +1,7 @@
 import React from "react"
 import useFetchCountries from "../hooks/useFetchCountries"
 import SEO from "../components/seo"
-import Loader from "react-loader"
+// import Loader from "react-loader"
 import useStateContext from "../hooks/useStateContext"
 import Layout from "../components/layout"
 import { Link } from "gatsby"
@@ -30,7 +30,7 @@ const EarthModelPage = () => {
           <p>{error && error.message && error.message}</p>
         </div>
       )}
-      {dataStatus === "LOADING" && <Loader color="white" />}
+      {/* {dataStatus === "LOADING" && <Loader color="white" />} */}
       {dataStatus === "SUCCESS" && (
         <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
           <div

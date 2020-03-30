@@ -1,14 +1,6 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { useSpring, animated } from "react-spring"
 import Header from "./header"
 import useDispatchContext from "../hooks/useDispatchContext"
 import "./layout.css"
@@ -23,21 +15,15 @@ const Layout = ({ children }) => {
       }
     }
   `)
-  const spring = useSpring({
-    opacity: 1,
-    from: {
-      opacity: 0,
-    },
-  })
+
   const [dispatch, { setCountryClicked }] = useDispatchContext()
   React.useEffect(() => {
     dispatch(setCountryClicked(false))
   }, [dispatch, setCountryClicked])
   return (
-    <animated.div
+    <div
       className="layout__container"
       style={{
-        ...spring,
         display: "flex",
         flexDirection: "column",
         minHeight: "100vh",
@@ -62,7 +48,7 @@ const Layout = ({ children }) => {
           javieraviles/covidAPI
         </a>
       </footer>
-    </animated.div>
+    </div>
   )
 }
 

@@ -1,6 +1,7 @@
 canvas {
   /* background-color: #212121; */
   background-color: black;
+  outline: none;
 }
 html {
   /* font-family: sans-serif; */
