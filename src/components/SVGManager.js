@@ -4,6 +4,7 @@ import EarthSVG from "./EarthSVG"
 import { useSpring, animated, config } from "react-spring"
 import useStateContext from "../hooks/useStateContext"
 import useDispatchContext from "../hooks/useDispatchContext"
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch"
 
 function SVGManager() {
   const { countryClicked, currentCountry, data } = useStateContext()
@@ -40,6 +41,7 @@ function SVGManager() {
             ...data.all,
             country: "Global",
             active: data.all.cases - data.all.deaths - data.all.recovered,
+            color: calculateColor(data.all),
           })
         )
       }
@@ -49,6 +51,14 @@ function SVGManager() {
       ref.removeEventListener("mousedown", handleMouseDown)
     }
   }, [dispatch, setCountryClicked, countryClicked, data, setCurrentCountry])
+
+  //get container width
+  const [containerWidth, setContainerWidth] = React.useState(0)
+  const containerRef = React.useCallback(node => {
+    if (node !== null) {
+      setContainerWidth(node.getBoundingClientRect().width)
+    }
+  }, [])
 
   //click handler
   const handleClick = e => {
@@ -78,15 +88,30 @@ function SVGManager() {
       },
     }
   }, {})
+
   return (
-    <EarthSVG
-      backgroundColor={backgroundColor}
-      pathsProps={pathsProps}
-      spring={spring}
-      animated={animated}
-      handleClick={handleClick}
-      svgRef={svgRef}
-    />
+    <div
+      className="svgManager__container"
+      style={{ flex: 1 }}
+      ref={containerRef}
+    >
+      <TransformWrapper
+        options={{
+          maxScale: 25,
+        }}
+      >
+        <TransformComponent>
+          <EarthSVG
+            backgroundColor={backgroundColor}
+            pathsProps={pathsProps}
+            animated={animated}
+            handleClick={handleClick}
+            svgRef={svgRef}
+            width={containerWidth}
+          />
+        </TransformComponent>
+      </TransformWrapper>
+    </div>
   )
 }
 

@@ -4,17 +4,17 @@ const EarthSVG = ({
   pathsProps,
   handleClick,
   backgroundColor,
-  spring,
   animated,
   svgRef,
+  width,
 }) => {
   return (
     <animated.svg
       ref={svgRef}
-      style={{ flex: 10, width: "100%", backgroundColor }}
+      style={{ backgroundColor }}
+      width={width}
       height={"100%"}
       viewBox="0 0 2000 1001"
-      width={400}
       id="prefix__svg2"
       strokeLinejoin="round"
       stroke="white"

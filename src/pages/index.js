@@ -40,7 +40,6 @@ const IndexPage = () => {
               display: "flex",
               color: "white",
               flex: 1,
-              marginBottom: "3rem",
             }}
           >
             <StatsBox />

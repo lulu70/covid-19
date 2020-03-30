@@ -29,10 +29,8 @@ const StatsBox = () => {
       style={{
         backgroundColor: "black",
         color: "white",
-        flex: 3,
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-between",
       }}
     >
       <div>
