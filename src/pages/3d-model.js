@@ -3,6 +3,7 @@ import useFetchCountries from "../hooks/useFetchCountries"
 import SEO from "../components/seo"
 // import Loader from "react-loader"
 import useStateContext from "../hooks/useStateContext"
+import useDispatchContext from "../hooks/useDispatchContext"
 import Layout from "../components/layout"
 import { Link } from "gatsby"
 import Selector from "../components/Selector"
@@ -10,7 +11,12 @@ import EarthScene from "../components/EarthScene"
 const EarthModelPage = () => {
   useFetchCountries()
   const { dataStatus, error, currentCountry } = useStateContext()
-
+  const [dispatch, { setDataStatus }] = useDispatchContext()
+  React.useEffect(() => {
+    return () => {
+      dispatch(setDataStatus("INITIAL"))
+    }
+  }, [])
   return (
     <Layout>
       <SEO title="3d model|covid-19 state of recovery" />

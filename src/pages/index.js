@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import SVGManager from "../components/SVGManager"
 import "../components/layout.css"
 import useStateContext from "../hooks/useStateContext"
+import useDispatchContext from "../hooks/useDispatchContext"
 import Layout from "../components/layout"
 import StatsBox from "../components/StatsBox"
 import { Link } from "gatsby"
@@ -12,6 +13,13 @@ import { Link } from "gatsby"
 const IndexPage = () => {
   useFetchCountries()
   const { dataStatus, error } = useStateContext()
+  const [dispatch, { setDataStatus }] = useDispatchContext()
+  React.useEffect(() => {
+    return () => {
+      dispatch(setDataStatus("INITIAL"))
+    }
+  }, [])
+
   return (
     <Layout>
       <SEO />

@@ -10,6 +10,7 @@ export const types = {
   setData: "SET_DATA",
   setCountryClicked: "SET_COUNTRY_CLICKED",
   setCurrentCountry: "SET_CURRENT_COUNTRY",
+  setDataStatus: "SET_DATA_STATUS",
 }
 export const actions = {
   setData: payload => ({
@@ -22,6 +23,10 @@ export const actions = {
   }),
   setCurrentCountry: payload => ({
     type: types.setCurrentCountry,
+    payload,
+  }),
+  setDataStatus: payload => ({
+    type: types.setDataStatus,
     payload,
   }),
 }
@@ -43,6 +48,13 @@ const reducer = (state, { type, payload }) => {
         ...state,
         currentCountry: payload,
       }
+
+    case types.setDataStatus:
+      return {
+        ...state,
+        dataStatus: payload,
+      }
+
     default:
       return state
   }
