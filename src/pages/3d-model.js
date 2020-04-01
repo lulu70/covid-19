@@ -8,6 +8,7 @@ import Layout from "../components/layout"
 // import { Link } from "gatsby"
 import Sidebar from "../components/Sidebar"
 import EarthScene from "../components/EarthScene"
+import TimedLoader from "../components/TimedLoader"
 const EarthModelPage = ({ location }) => {
   useFetchCountries()
   const { dataStatus, error } = useStateContext()
@@ -36,7 +37,7 @@ const EarthModelPage = ({ location }) => {
           <p>{error && error.message && error.message}</p>
         </div>
       )}
-      {/* {dataStatus === "LOADING" && <Loader color="white" />} */}
+      {dataStatus === "LOADING" && <TimedLoader />}
       {dataStatus === "SUCCESS" && (
         <Layout
           location={location}
@@ -53,24 +54,6 @@ const EarthModelPage = ({ location }) => {
             <Sidebar location={location} />
             <EarthScene />
           </div>
-          {/* <Link to="/" style={{ color: "#00ff41" }}>
-            Check out an interactive map
-          </Link>
-          <p
-            style={{
-              color: "white",
-              fontSize: "0.8rem",
-              margin: "1rem 0",
-            }}
-          >
-            This is a visual representation of the covid-19 (corona) virus
-            epidemic state of recovery, globally and in each country separately.{" "}
-            <br />
-            The color of the globe 3d model is changing based on the number of
-            confirmed cases and recovery cases.
-            <br /> Confirmed cases are representing by the red color and
-            recovered cases by the blue color.
-          </p> */}
         </Layout>
       )}
     </div>
