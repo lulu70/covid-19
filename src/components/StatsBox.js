@@ -2,10 +2,24 @@ import React from "react"
 import Bar from "./Bar"
 import calculatePercentage from "../helpers/calculatePercentage"
 import useStateContext from "../hooks/useStateContext"
+import styled from "styled-components"
 
+const H3 = styled.h3`
+  font-weight: normal;
+  margin-bottom: lineHeight;
+`
+const Ul = styled.ul`
+  list-style-type: none;
+  margin: 0;
+  font-size: 1rem;
+`
+const Li = styled.li`
+  margin: 0;
+  line-height: 1rem;
+  color: ${({ color }) => color};
+`
 const StatsBox = () => {
   const { currentCountry } = useStateContext()
-  const lineHeight = "1rem"
   const normalizeName = word => {
     if (word.includes(",")) {
       const arr = word.split("")
@@ -18,39 +32,18 @@ const StatsBox = () => {
     recoveredPercentage,
     activePercentage,
   } = calculatePercentage(currentCountry)
-  const liBasicStyle = {
-    margin: 0,
-    lineHeight,
-  }
+
   return (
     <div>
-      <h3
-        style={{
-          fontWeight: "normal",
-          marginBottom: lineHeight,
-        }}
-      >
-        {normalizeName(currentCountry.country)}
-      </h3>
-      <ul style={{ listStyleType: "none", margin: 0, fontSize: lineHeight }}>
-        <li style={{ ...liBasicStyle, color: "red" }}>
-          Active: {currentCountry.active}
-        </li>
+      <H3>{normalizeName(currentCountry.country)}</H3>
+      <Ul>
+        <Li color="red">Active: {currentCountry.active}</Li>
         <Bar color="red" width={activePercentage} />
-        <li
-          style={{
-            ...liBasicStyle,
-            color: "#4badff",
-          }}
-        >
-          Recovered: {currentCountry.recovered}
-        </li>
+        <Li color="#4badff">Recovered: {currentCountry.recovered}</Li>
         <Bar color="blue" width={recoveredPercentage} />
-        <li style={{ ...liBasicStyle, color: "grey" }}>
-          Deaths: {currentCountry.deaths}
-        </li>
+        <Li color="grey">Deaths: {currentCountry.deaths}</Li>
         <Bar color="grey" width={deathPercentage} />
-      </ul>
+      </Ul>
     </div>
   )
 }

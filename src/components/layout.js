@@ -4,6 +4,26 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import useDispatchContext from "../hooks/useDispatchContext"
 import "./layout.css"
+import styled from "styled-components"
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+  padding: 0 1rem;
+`
+const Main = styled.main`
+  display: flex;
+  flex: 1;
+`
+const Footer = styled.footer`
+  color: white;
+  font-size: 0.7rem;
+`
+const A = styled.a`
+  color: #00ff41;
+`
 
 const Layout = ({ children, location }) => {
   const data = useStaticQuery(graphql`
@@ -21,34 +41,16 @@ const Layout = ({ children, location }) => {
     dispatch(setCountryClicked(false))
   }, [dispatch, setCountryClicked])
   return (
-    <div
-      className="layout__container"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        minHeight: "100vh",
-        justifyContent: "space-between",
-        padding: " 0 1rem",
-      }}
-    >
+    <Container className="layout__container">
       <Header siteTitle={data.site.siteMetadata.title} location={location} />
-      <main style={{ display: "flex", flex: 1 }}>{children}</main>
-      <footer
-        style={{
-          color: "white",
-          fontSize: "0.7rem",
-        }}
-      >
+      <Main>{children}</Main>
+      <Footer>
         This project made possible thanks to:{" "}
-        <a
-          style={{ color: "#00ff41" }}
-          target="blank"
-          href="https://github.com/NovelCOVID/API"
-        >
+        <A target="blank" href="https://github.com/NovelCOVID/API">
           NovelCOVID/API
-        </a>
-      </footer>
-    </div>
+        </A>
+      </Footer>
+    </Container>
   )
 }
 

@@ -5,8 +5,13 @@ import { useSpring, animated, config } from "react-spring"
 import useStateContext from "../hooks/useStateContext"
 import useDispatchContext from "../hooks/useDispatchContext"
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch"
+import styled from "styled-components"
 
-function SVGManager() {
+const Container = styled.div`
+  flex: 5;
+`
+
+const SVGManager = () => {
   const { countryClicked, currentCountry, data } = useStateContext()
   const [
     dispatch,
@@ -101,11 +106,7 @@ function SVGManager() {
     opacity: spring.opacity,
   }
   return (
-    <div
-      className="svgManager__container"
-      style={{ flex: 5 }}
-      ref={containerRef}
-    >
+    <Container className="svgManager__container" ref={containerRef}>
       <TransformWrapper
         options={{
           maxScale: 25,
@@ -123,7 +124,7 @@ function SVGManager() {
           />
         </TransformComponent>
       </TransformWrapper>
-    </div>
+    </Container>
   )
 }
 

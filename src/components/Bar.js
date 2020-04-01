@@ -8,12 +8,7 @@ const Bar = ({ color, width }) => {
     config: config.molasses,
   })
   return (
-    <svg
-      width="100%"
-      height="5px"
-      // stroke="white"
-      // style={{ border: "solid white 0.5px" }}
-    >
+    <svg width="100%" height="5px">
       <animated.rect {...spring} height="100%" fill={color} />
     </svg>
   )

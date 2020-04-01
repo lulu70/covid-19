@@ -4,6 +4,13 @@ import EarthSphere from "./EarthSphere"
 import Controls from "./Controls"
 import { useSpring, a, config } from "react-spring/three"
 import useStateContext from "../hooks/useStateContext"
+import styled from "styled-components"
+
+const StyledCanvas = styled(Canvas)`
+  background-color: ${({ fromHeader }) => (fromHeader ? "black" : "#232222")};
+  flex: ${({ fromHeader }) => (fromHeader ? 1 : 5)};
+`
+
 const EarthScene = ({ fromHeader, location }) => {
   const { currentCountry } = useStateContext()
   const { color } = currentCountry
@@ -17,12 +24,9 @@ const EarthScene = ({ fromHeader, location }) => {
   })
 
   return (
-    <Canvas
+    <StyledCanvas
       camera={{ position: [0, 0, fromHeader ? 18 : 12] }}
-      style={{
-        background: fromHeader ? "black" : "#232222",
-        flex: fromHeader ? 1 : 5,
-      }}
+      fromHeader={fromHeader}
     >
       {fromHeader && location.pathname === "/3d-model" ? null : (
         <>
@@ -31,7 +35,7 @@ const EarthScene = ({ fromHeader, location }) => {
           <a.ambientLight {...spring} />
         </>
       )}
-    </Canvas>
+    </StyledCanvas>
   )
 }
 
