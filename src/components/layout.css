@@ -1,8 +1,3 @@
-canvas {
-  /* background-color: #212121; */
-  background-color: black;
-  outline: none;
-}
 html {
   /* font-family: sans-serif; */
   -ms-text-size-adjust: 100%;
@@ -614,9 +609,7 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
-.statsBox__container {
-  padding-right: 2rem;
-}
+
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
@@ -629,9 +622,6 @@ pre tt:after {
   }
   .index__innerContainer {
     flex-direction: column;
-  }
-  .statsBox__container {
-    padding: 0;
   }
   canvas {
     height: 400px;

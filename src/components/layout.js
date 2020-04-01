@@ -5,7 +5,7 @@ import Header from "./header"
 import useDispatchContext from "../hooks/useDispatchContext"
 import "./layout.css"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
         padding: " 0 1rem",
       }}
     >
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={data.site.siteMetadata.title} location={location} />
       <main style={{ display: "flex", flex: 1 }}>{children}</main>
       <footer
         style={{
@@ -43,9 +43,9 @@ const Layout = ({ children }) => {
         <a
           style={{ color: "#00ff41" }}
           target="blank"
-          href="https://github.com/javieraviles/covidAPI"
+          href="https://github.com/NovelCOVID/API"
         >
-          javieraviles/covidAPI
+          NovelCOVID/API
         </a>
       </footer>
     </div>

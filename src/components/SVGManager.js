@@ -46,6 +46,9 @@ function SVGManager() {
           setCurrentCountry({
             ...data.all,
             country: "Global",
+            countryInfo: {
+              iso2: "global",
+            },
             active: data.all.cases - data.all.deaths - data.all.recovered,
             color: calculateColor(data.all),
           })
@@ -100,7 +103,7 @@ function SVGManager() {
   return (
     <div
       className="svgManager__container"
-      style={{ flex: 1 }}
+      style={{ flex: 5 }}
       ref={containerRef}
     >
       <TransformWrapper

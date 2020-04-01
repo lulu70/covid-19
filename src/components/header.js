@@ -1,20 +1,24 @@
 import PropTypes from "prop-types"
 import React from "react"
 import { Link } from "gatsby"
-const Header = ({ siteTitle }) => (
-  <header>
+import Search from "./Search"
+import EarthScene from "./EarthScene"
+const Header = ({ siteTitle, location }) => (
+  <header style={{ display: "flex", alignItems: "center" }}>
+    <EarthScene fromHeader location={location} />
     <Link
       to="/"
       style={{
-        margin: `0 auto`,
-        padding: `1.45rem 1.0875rem`,
+        margin: `0 1rem`,
         textDecoration: "none",
+        flex: 8,
       }}
     >
       <h1 style={{ margin: 0, textAlign: "center", color: "white" }}>
         {siteTitle}
       </h1>
     </Link>
+    <Search />
   </header>
 )
 

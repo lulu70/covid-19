@@ -5,20 +5,20 @@ import SEO from "../components/seo"
 import useStateContext from "../hooks/useStateContext"
 import useDispatchContext from "../hooks/useDispatchContext"
 import Layout from "../components/layout"
-import { Link } from "gatsby"
-import Selector from "../components/Selector"
+// import { Link } from "gatsby"
+import Sidebar from "../components/Sidebar"
 import EarthScene from "../components/EarthScene"
-const EarthModelPage = () => {
+const EarthModelPage = ({ location }) => {
   useFetchCountries()
-  const { dataStatus, error, currentCountry } = useStateContext()
+  const { dataStatus, error } = useStateContext()
   const [dispatch, { setDataStatus }] = useDispatchContext()
   React.useEffect(() => {
     return () => {
       dispatch(setDataStatus("INITIAL"))
     }
-  }, [])
+  }, [dispatch, setDataStatus])
   return (
-    <Layout>
+    <div>
       <SEO title="3d model|covid-19 state of recovery" />
       {dataStatus === "ERROR" && (
         <div
@@ -38,7 +38,10 @@ const EarthModelPage = () => {
       )}
       {/* {dataStatus === "LOADING" && <Loader color="white" />} */}
       {dataStatus === "SUCCESS" && (
-        <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+        <Layout
+          location={location}
+          style={{ flex: 1, display: "flex", flexDirection: "column" }}
+        >
           <div
             className="index__innerContainer"
             style={{
@@ -47,10 +50,10 @@ const EarthModelPage = () => {
               flex: 1,
             }}
           >
-            <Selector />
-            <EarthScene color={currentCountry.color} />
+            <Sidebar location={location} />
+            <EarthScene />
           </div>
-          <Link to="/" style={{ color: "#00ff41" }}>
+          {/* <Link to="/" style={{ color: "#00ff41" }}>
             Check out an interactive map
           </Link>
           <p
@@ -67,10 +70,10 @@ const EarthModelPage = () => {
             confirmed cases and recovery cases.
             <br /> Confirmed cases are representing by the red color and
             recovered cases by the blue color.
-          </p>
-        </div>
+          </p> */}
+        </Layout>
       )}
-    </Layout>
+    </div>
   )
 }
 
