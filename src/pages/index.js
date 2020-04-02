@@ -41,8 +41,8 @@ const IndexPage = ({ location }) => {
       {dataStatus === "LOADING" && <TimedLoader />}
       {dataStatus === "SUCCESS" && (
         <Layout location={location}>
-          <Sidebar location={location} />
           <SVGManager />
+          <Sidebar location={location} />
         </Layout>
       )}
     </>

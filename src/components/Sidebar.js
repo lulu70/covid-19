@@ -36,7 +36,9 @@ const Sidebar = ({ location }) => {
             Confirmed cases are representing by the red color and recovered cases by the blue color.`}
         </P>
         <StyledLink to={location.pathname === "/" ? "/3d-model" : "/"}>
-          {location.pathname === "/" ? "Big 3d-model" : "Interactive map"}
+          {location.pathname === "/"
+            ? "Checkout a big 3d-model"
+            : "Checkout a interactive map"}
         </StyledLink>
       </div>
     </Container>

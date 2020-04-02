@@ -9,10 +9,14 @@ import EarthScene from "../components/EarthScene"
 import TimedLoader from "../components/TimedLoader"
 import styled from "styled-components"
 import { ErrorContainer } from "./index"
-
+import devices from "../helpers/devices"
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
   flex: 1;
+  @media ${devices.tablet} {
+    flex-direction: row;
+  }
 `
 
 const EarthModelPage = ({ location }) => {
@@ -40,8 +44,8 @@ const EarthModelPage = ({ location }) => {
       {dataStatus === "SUCCESS" && (
         <Layout location={location}>
           <Container>
-            <Sidebar location={location} />
             <EarthScene />
+            <Sidebar location={location} />
           </Container>
         </Layout>
       )}

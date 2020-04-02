@@ -6,9 +6,12 @@ import useStateContext from "../hooks/useStateContext"
 import useDispatchContext from "../hooks/useDispatchContext"
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch"
 import styled from "styled-components"
-
+import devices from "../helpers/devices"
 const Container = styled.div`
   flex: 5;
+  @media ${devices.tablet} {
+    order: 2;
+  }
 `
 
 const SVGManager = () => {

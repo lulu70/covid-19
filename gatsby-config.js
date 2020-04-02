@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Covid 19 state of recovery`,
+    title: `Covid 19`,
+    subTitle: `state of recovery`,
     description: `covid 19 state of recovery presented on an interactive map`,
     author: `Lior cohen`,
   },

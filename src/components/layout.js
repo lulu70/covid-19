@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import useDispatchContext from "../hooks/useDispatchContext"
 import styled from "styled-components"
-
+import devices from "../helpers/devices"
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -14,7 +14,11 @@ const Container = styled.div`
 `
 const Main = styled.main`
   display: flex;
+  flex-direction: column;
   flex: 1;
+  @media ${devices.tablet} {
+    flex-direction: row;
+  }
 `
 const Footer = styled.footer`
   color: white;
@@ -30,6 +34,7 @@ const Layout = ({ children, location }) => {
       site {
         siteMetadata {
           title
+          subTitle
         }
       }
     }
@@ -41,7 +46,11 @@ const Layout = ({ children, location }) => {
   }, [dispatch, setCountryClicked])
   return (
     <Container className="layout__container">
-      <Header siteTitle={data.site.siteMetadata.title} location={location} />
+      <Header
+        siteTitle={data.site.siteMetadata.title}
+        subTitle={data.site.siteMetadata.subTitle}
+        location={location}
+      />
       <Main>{children}</Main>
       <Footer>
         This project made possible thanks to:{" "}

@@ -3,6 +3,11 @@ import useStateContext from "../hooks/useStateContext"
 import useDispatchContext from "../hooks/useDispatchContext"
 import calculateColor from "../helpers/calculateColor"
 import Select from "react-select"
+import styled from "styled-components"
+const StyledSelect = styled(Select)`
+  width: 50%;
+  order: 3;
+`
 
 const Search = () => {
   const { data, currentCountry } = useStateContext()
@@ -69,10 +74,10 @@ const Search = () => {
     label: country,
   }))
   return (
-    <Select
+    <StyledSelect
       value={currentCountry.countryInfo.iso2}
       onChange={handleChange}
-      placeholder="Search..."
+      placeholder="Search"
       styles={customSelectStyles}
       options={options}
     />

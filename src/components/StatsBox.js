@@ -5,7 +5,6 @@ import useStateContext from "../hooks/useStateContext"
 import styled from "styled-components"
 
 const H3 = styled.h3`
-  font-weight: normal;
   margin-bottom: lineHeight;
 `
 const Ul = styled.ul`

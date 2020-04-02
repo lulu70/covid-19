@@ -1,30 +1,36 @@
 import React from "react"
-import { Link } from "gatsby"
 import Search from "./Search"
 import EarthScene from "./EarthScene"
 import styled from "styled-components"
+import devices from "../helpers/devices"
 
 const StyledHeader = styled.header`
   display: flex;
   align-items: center;
+  flex-direction: column;
+  min-height: 6rem;
+  margin: 1rem;
+  @media ${devices.tablet} {
+    flex-direction: row;
+    margin: 0;
+  }
 `
-const StyledLink = styled(Link)`
+const TitleContainer = styled.div`
   margin: 0 1rem;
   text-decoration: none;
   flex: 8;
-`
-const H1 = styled.h1`
-  margin: 0;
+  order: 2;
   text-align: center;
-  color: white;
+  font-weight: 200;
 `
-const Header = ({ siteTitle, location }) => (
+const Header = ({ siteTitle, location, subTitle }) => (
   <StyledHeader>
-    <EarthScene fromHeader location={location} />
-    <StyledLink to="/">
-      <H1>{siteTitle}</H1>
-    </StyledLink>
+    <TitleContainer>
+      <h1>{siteTitle}</h1>
+      <h3>{subTitle}</h3>
+    </TitleContainer>
     <Search />
+    <EarthScene fromHeader location={location} />
   </StyledHeader>
 )
 
