@@ -16,7 +16,7 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   flex: 1;
-  @media ${devices.tablet} {
+  @media ${devices.laptopL} {
     flex-direction: row;
   }
 `

@@ -7,12 +7,14 @@ import useStateContext from "../hooks/useStateContext"
 import styled from "styled-components"
 import devices from "../helpers/devices"
 
-const StyledCanvas = styled(Canvas)`
+const MyCanvas = ({ fromHeader, ...props }) => <Canvas {...props} />
+
+const StyledCanvas = styled(MyCanvas)`
   background-color: ${({ fromHeader }) => (fromHeader ? "black" : "#232222")};
   flex: ${({ fromHeader }) => (fromHeader ? 1 : 5)};
   min-height: ${({ fromHeader }) => (fromHeader ? "0px" : "300px")};
   max-height: ${({ fromHeader }) => (fromHeader ? "0px" : "500px")};
-  @media ${devices.tablet} {
+  @media ${devices.laptopL} {
     max-height: 500px;
     order: 1;
   }

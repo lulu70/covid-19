@@ -10,7 +10,7 @@ const StyledHeader = styled.header`
   flex-direction: column;
   min-height: 6rem;
   margin: 1rem;
-  @media ${devices.tablet} {
+  @media ${devices.laptopL} {
     flex-direction: row;
     margin: 0;
   }

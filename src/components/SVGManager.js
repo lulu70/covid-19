@@ -7,9 +7,11 @@ import useDispatchContext from "../hooks/useDispatchContext"
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch"
 import styled from "styled-components"
 import devices from "../helpers/devices"
+import useComponentSize from "@rehooks/component-size"
+
 const Container = styled.div`
   flex: 5;
-  @media ${devices.tablet} {
+  @media ${devices.laptopL} {
     order: 2;
   }
 `
@@ -70,13 +72,8 @@ const SVGManager = () => {
   }, [dispatch, setCountryClicked, countryClicked, data, setCurrentCountry])
 
   //get container width
-  const [containerWidth, setContainerWidth] = React.useState(0)
-  const containerRef = React.useCallback(node => {
-    if (node !== null) {
-      setContainerWidth(node.getBoundingClientRect().width)
-    }
-  }, [])
-
+  const containerRef = React.useRef(null)
+  const { width: containerWidth } = useComponentSize(containerRef)
   //click handler
   const handleClick = e => {
     const name = e.target.getAttribute("data-id")
