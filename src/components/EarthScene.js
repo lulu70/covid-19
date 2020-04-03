@@ -7,9 +7,9 @@ import useStateContext from "../hooks/useStateContext"
 import styled from "styled-components"
 import devices from "../helpers/devices"
 
-const MyCanvas = ({ fromHeader, ...props }) => <Canvas {...props} />
+const CanvasWrapper = ({ fromHeader, ...props }) => <Canvas {...props} />
 
-const StyledCanvas = styled(MyCanvas)`
+const StyledCanvas = styled(CanvasWrapper)`
   background-color: ${({ fromHeader }) => (fromHeader ? "black" : "#232222")};
   flex: ${({ fromHeader }) => (fromHeader ? 1 : 5)};
   min-height: ${({ fromHeader }) => (fromHeader ? "0px" : "300px")};
