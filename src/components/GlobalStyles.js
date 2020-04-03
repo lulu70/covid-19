@@ -2,10 +2,11 @@ import { createGlobalStyle } from "styled-components"
 
 const GlobalStyles = createGlobalStyle`
 * {
-  font-weight: normal;
+  font-weight: lighter;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   color: white;
+
 }
  html {
   -ms-text-size-adjust: 100%;

@@ -3,7 +3,10 @@ import Bar from "./Bar"
 import calculatePercentage from "../helpers/calculatePercentage"
 import useStateContext from "../hooks/useStateContext"
 import styled from "styled-components"
-
+import normalizeName from "../helpers/normalizeName"
+const Container = styled.div`
+  flex: 1;
+`
 const H3 = styled.h3`
   margin-bottom: lineHeight;
 `
@@ -19,13 +22,6 @@ const Li = styled.li`
 `
 const StatsBox = () => {
   const { currentCountry } = useStateContext()
-  const normalizeName = word => {
-    if (word.includes(",")) {
-      const arr = word.split("")
-      const slicedArr = arr.slice(0, arr.indexOf(","))
-      return slicedArr.join("")
-    } else return word
-  }
   const {
     deathPercentage,
     recoveredPercentage,
@@ -33,8 +29,8 @@ const StatsBox = () => {
   } = calculatePercentage(currentCountry)
 
   return (
-    <div>
-      <H3>{normalizeName(currentCountry.country)}</H3>
+    <Container>
+      <H3 id="statsBox__h3">{normalizeName(currentCountry.country)}</H3>
       <Ul>
         <Li color="red">Active: {currentCountry.active}</Li>
         <Bar color="red" width={activePercentage} />
@@ -43,7 +39,7 @@ const StatsBox = () => {
         <Li color="grey">Deaths: {currentCountry.deaths}</Li>
         <Bar color="grey" width={deathPercentage} />
       </Ul>
-    </div>
+    </Container>
   )
 }
 

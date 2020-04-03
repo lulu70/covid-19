@@ -4,9 +4,11 @@ import useDispatchContext from "../hooks/useDispatchContext"
 import calculateColor from "../helpers/calculateColor"
 import Select from "react-select"
 import styled from "styled-components"
-const StyledSelect = styled(Select)`
-  width: 50%;
-  order: 3;
+import normalizeName from "../helpers/normalizeName"
+const Container = styled.div`
+  display: flex;
+  margin-bottom: 2rem;
+  width: 10rem;
 `
 
 const Search = () => {
@@ -47,7 +49,6 @@ const Search = () => {
     indicatorSeparator: () => null,
     container: provided => ({
       ...provided,
-      display: "flex",
       flex: 1,
     }),
     input: provided => ({
@@ -71,16 +72,18 @@ const Search = () => {
   }
   const options = data.countries.map(({ country, countryInfo }) => ({
     value: countryInfo.iso2,
-    label: country,
+    label: normalizeName(country),
   }))
   return (
-    <StyledSelect
-      value={currentCountry.countryInfo.iso2}
-      onChange={handleChange}
-      placeholder="Search"
-      styles={customSelectStyles}
-      options={options}
-    />
+    <Container>
+      <Select
+        value={currentCountry.countryInfo.iso2}
+        onChange={handleChange}
+        placeholder="Search"
+        styles={customSelectStyles}
+        options={options}
+      />
+    </Container>
   )
 }
 

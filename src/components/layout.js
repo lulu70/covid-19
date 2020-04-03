@@ -5,19 +5,19 @@ import Header from "./header"
 import useDispatchContext from "../hooks/useDispatchContext"
 import styled from "styled-components"
 import devices from "../helpers/devices"
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  justify-content: space-between;
-  padding: 0 1rem;
+  align-items: center;
 `
 const Main = styled.main`
   display: flex;
   flex-direction: column;
-  flex: 1;
-  @media ${devices.laptopL} {
-    flex-direction: row;
+  align-items: center;
+  width: 95%;
+  @media ${devices.laptop} {
+    width: 60%;
   }
 `
 const Footer = styled.footer`
@@ -28,7 +28,7 @@ const A = styled.a`
   color: #00ff41;
 `
 
-const Layout = ({ children, location }) => {
+const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -45,11 +45,10 @@ const Layout = ({ children, location }) => {
     dispatch(setCountryClicked(false))
   }, [dispatch, setCountryClicked])
   return (
-    <Container className="layout__container">
+    <Container>
       <Header
         siteTitle={data.site.siteMetadata.title}
         subTitle={data.site.siteMetadata.subTitle}
-        location={location}
       />
       <Main>{children}</Main>
       <Footer>

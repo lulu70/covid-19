@@ -5,9 +5,10 @@ import SVGManager from "../components/SVGManager"
 import useStateContext from "../hooks/useStateContext"
 import useDispatchContext from "../hooks/useDispatchContext"
 import Layout from "../components/layout"
-import Sidebar from "../components/Sidebar"
 import TimedLoader from "../components/TimedLoader"
 import styled from "styled-components"
+import Search from "../components/Search"
+import Stats from "../components/Stats"
 
 export const ErrorContainer = styled.div`
   height: 100vh;
@@ -15,8 +16,12 @@ export const ErrorContainer = styled.div`
   align-items: center;
   flex-direction: column;
 `
-
-const IndexPage = ({ location }) => {
+const P = styled.p`
+  /* text-align: center; */
+  line-height: 2.5rem;
+  font-size: 1rem;
+`
+const IndexPage = () => {
   useFetchCountries()
   const { dataStatus, error } = useStateContext()
   const [dispatch, { setDataStatus }] = useDispatchContext()
@@ -40,9 +45,18 @@ const IndexPage = ({ location }) => {
       )}
       {dataStatus === "LOADING" && <TimedLoader />}
       {dataStatus === "SUCCESS" && (
-        <Layout location={location}>
+        <Layout>
+          <Search />
+          <Stats />
           <SVGManager />
-          <Sidebar location={location} />
+          <P>
+            This is a visual representation of the covid-19 (corona) virus
+            epidemic state of recovery, globally and in each country separately.
+            When a country on the map is pressed, its color is changing based on
+            the number of confirmed cases and recovery cases. Confirmed cases
+            are representing by the red color and recovered cases by the blue
+            color.
+          </P>
         </Layout>
       )}
     </>
