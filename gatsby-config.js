@@ -6,6 +6,14 @@ module.exports = {
     author: `Lior cohen`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-161489342-1",
+        head: true,
+        anonymize: true,
+      },
+    },
     `gatsby-plugin-styled-components`,
     {
       resolve: "gatsby-plugin-layout",
