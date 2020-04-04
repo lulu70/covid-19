@@ -4,7 +4,7 @@ import calculatePercentage from "../helpers/calculatePercentage"
 import useStateContext from "../hooks/useStateContext"
 import styled from "styled-components"
 import normalizeName from "../helpers/normalizeName"
-import devices from "../helpers/devices"
+
 const Container = styled.div`
   width: 180px;
 `
