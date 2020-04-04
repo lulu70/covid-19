@@ -17,6 +17,9 @@ const Main = styled.main`
   align-items: center;
   width: 95%;
   @media ${devices.laptop} {
+    width: 80%;
+  }
+  @media ${devices.desktop} {
     width: 60%;
   }
 `
