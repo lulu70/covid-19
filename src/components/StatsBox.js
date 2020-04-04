@@ -4,8 +4,9 @@ import calculatePercentage from "../helpers/calculatePercentage"
 import useStateContext from "../hooks/useStateContext"
 import styled from "styled-components"
 import normalizeName from "../helpers/normalizeName"
+import devices from "../helpers/devices"
 const Container = styled.div`
-  flex: 1;
+  width: 180px;
 `
 const H3 = styled.h3`
   margin-bottom: lineHeight;
