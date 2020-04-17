@@ -20,7 +20,7 @@
     "gatsby-plugin-transitions": "^2.1.6",
     "gatsby-source-filesystem": "^2.1.56",
     "gatsby-transformer-sharp": "^2.3.19",
-    "novelcovid": "^1.0.7-b3",
+    "novelcovid": "^1.2.4",
     "prop-types": "^15.7.2",
     "pusher-js": "^5.1.1",
     "react": "^16.12.0",

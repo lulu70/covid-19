@@ -7,7 +7,6 @@ import useDispatchContext from "../hooks/useDispatchContext"
 import Layout from "../components/layout"
 import TimedLoader from "../components/TimedLoader"
 import styled from "styled-components"
-import Search from "../components/Search"
 import Stats from "../components/Stats"
 
 export const ErrorContainer = styled.div`
@@ -45,7 +44,6 @@ const IndexPage = () => {
       {dataStatus === "LOADING" && <TimedLoader />}
       {dataStatus === "SUCCESS" && (
         <Layout>
-          <Search />
           <Stats />
           <SVGManager />
           <P>
