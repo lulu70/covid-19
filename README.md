@@ -7,6 +7,6 @@ This is a visual representation of the covid-19 (corona) virus epidemic state of
 <img src="./src/images/covid-19.png" alt="covid-19" height="200">
 <br>
 This project made possible thanks to:
-<a target="blank" href="https://github.com/NovelCOVID/API">
-NovelCOVID/API
+<a target="blank" href="https://github.com/disease-sh/API">
+disease-sh/API
 </a>

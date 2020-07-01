@@ -56,8 +56,8 @@ const Layout = ({ children }) => {
       <Main>{children}</Main>
       <Footer>
         This project made possible thanks to:{" "}
-        <A target="blank" href="https://github.com/NovelCOVID/API">
-          NovelCOVID/API
+        <A target="blank" href="https://github.com/disease-sh/API">
+          disease-sh/API
         </A>
       </Footer>
     </Container>

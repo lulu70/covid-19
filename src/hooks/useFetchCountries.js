@@ -1,8 +1,6 @@
 import React from "react"
 import useDispatchContext from "./useDispatchContext"
-import { NovelCovid } from "novelcovid"
 import calculateColor from "../helpers/calculateColor"
-const track = new NovelCovid()
 
 const useFetchCountries = () => {
   const [dispatch, { setData }] = useDispatchContext()
@@ -15,9 +13,12 @@ const useFetchCountries = () => {
             dataStatus: "LOADING",
           })
         )
-        const all = await track.all()
-        const countries = await track.countries()
-
+        const allResponse = await fetch("https://disease.sh/v3/covid-19/all")
+        const all = await allResponse.json()
+        const countriesRes = await fetch(
+          "https://disease.sh/v3/covid-19/countries"
+        )
+        const countries = await countriesRes.json()
         if (all.error || countries.error)
           throw new Error({
             allError: all.error,
